@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CupSwap — Agent Marketplace</title>
+<meta name="description" content="CupSwap: an agent-to-agent marketplace for World Cup 2026 ticket resale. MIS 552 Homework 3.">
+<style>
+  :root {
+    --bg:#F5F7FB; --card:#FFFFFF; --ink:#0F172A; --muted:#475569; --line:#E2E8F0;
+    --blue:#2563EB; --navy:#0F172A; --green:#059669; --amber:#D97706; --red:#DC2626; --violet:#7C3AED;
+    --soft:#EFF6FF;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#0B1220; --card:#111A2E; --ink:#E2E8F0; --muted:#94A3B8; --line:#1E293B; --soft:#13203D; }
+  }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.6 Inter, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+  a { color:var(--blue); text-decoration:none; } a:hover { text-decoration:underline; }
+  .wrap { max-width:1080px; margin:0 auto; padding:0 20px; }
+  nav { position:sticky; top:0; z-index:10; background:var(--navy); color:#E2E8F0; }
+  nav .wrap { display:flex; gap:20px; align-items:center; height:52px; overflow-x:auto; white-space:nowrap; }
+  nav b { color:#fff; margin-right:8px; } nav a { color:#CBD5E1; font-size:14px; } nav a:hover { color:#fff; text-decoration:none; }
+  .hero { background:linear-gradient(135deg,#0F172A 0%,#1E3A8A 55%,#2563EB 100%); color:#fff; padding:64px 0 56px; }
+  .hero .k { font:700 12px/1 Inter,sans-serif; letter-spacing:.12em; text-transform:uppercase; color:#93C5FD; }
+  .hero h1 { margin:14px 0 12px; font-size:clamp(30px,5vw,46px); line-height:1.1; }
+  .hero p { max-width:720px; color:#DBEAFE; font-size:18px; margin:0 0 22px; }
+  .tags span { display:inline-block; margin:0 8px 8px 0; padding:5px 12px; border-radius:999px; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.2); font-size:13px; }
+  .btns a { display:inline-block; margin:6px 10px 0 0; padding:10px 18px; border-radius:10px; font-weight:600; }
+  .btn1 { background:#fff; color:#1E3A8A; } .btn2 { border:1px solid rgba(255,255,255,.5); color:#fff; }
+  section { padding:46px 0 10px; }
+  h2 { font-size:28px; margin:0 0 6px; } .sub { color:var(--muted); margin:0 0 22px; }
+  .grid { display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:20px; box-shadow:0 1px 2px rgba(15,23,42,.04); }
+  .card .e { font:700 11px/1 Inter,sans-serif; letter-spacing:.1em; text-transform:uppercase; color:var(--blue); }
+  .card h3 { margin:8px 0 6px; font-size:19px; } .card p { margin:0; color:var(--muted); font-size:15px; }
+  .agent { display:grid; gap:24px; grid-template-columns:1fr; margin-bottom:34px; }
+  @media (min-width:900px) { .agent { grid-template-columns:5fr 6fr; align-items:start; } }
+  .agent h3 { font-size:24px; margin:4px 0 6px; } .part { font:700 12px/1 Inter,sans-serif; letter-spacing:.1em; text-transform:uppercase; color:var(--blue); }
+  ol, ul { padding-left:22px; margin:10px 0; } li { margin:5px 0; }
+  .shot { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:8px; }
+  .shot img { width:100%; height:auto; display:block; border-radius:8px; }
+  .shot figcaption { font-size:13px; color:var(--muted); padding:8px 6px 2px; }
+  figure { margin:0; }
+  .note { background:var(--soft); border-left:4px solid var(--blue); border-radius:8px; padding:12px 16px; margin:14px 0; font-size:15px; }
+  table { width:100%; border-collapse:collapse; background:var(--card); border:1px solid var(--line); border-radius:12px; overflow:hidden; font-size:14px; }
+  th, td { text-align:left; padding:9px 12px; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { background:var(--soft); font-size:12px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); }
+  .pill { display:inline-block; padding:2px 10px; border-radius:999px; font-size:12px; font-weight:600; }
+  .p-red { background:#FEE2E2; color:#B91C1C; } .p-blue { background:#DBEAFE; color:#1D4ED8; } .p-green { background:#D1FAE5; color:#047857; }
+  pre { background:#0F172A; color:#E2E8F0; padding:14px 16px; border-radius:10px; overflow-x:auto; font-size:14px; }
+  code { font-family:Consolas, "SF Mono", monospace; }
+  footer { padding:34px 0 50px; color:var(--muted); font-size:14px; border-top:1px solid var(--line); margin-top:30px; }
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <b>CupSwap</b><a href="#overview">Overview</a><a href="#buyer">Buyer Agent</a><a href="#negotiation">Negotiation</a>
+  <a href="#operations">Operations</a><a href="#fairdrop">Fair-Drop</a><a href="#autonomy">Autonomy</a><a href="#run">Run it</a>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="k">MIS 552 · Homework 3 · fictional platform, mock tools, synthetic data</div>
+  <h1>CupSwap — an agent-to-agent marketplace for World Cup 2026</h1>
+  <p>A control room for agents, not a chat window. A buyer agent plans and acts, three agents negotiate under marketplace rules,
+     a workflow handles a storm postponement, and a fair-allocation desk keeps organizer releases honest. Every step is traced and every
+     irreversible action waits for a human click.</p>
+  <div class="tags"><span>Plan mode + human approval</span><span>ReAct + strict function calling</span><span>Multi-agent negotiation</span><span>Workflow + approval gate</span><span>MCP server (bonus)</span></div>
+  <div class="btns"><a class="btn1" href="https://github.com/gitty-hash/CupSwap">View the code on GitHub</a><a class="btn2" href="#run">Run it locally</a></div>
+</div></header>
+
+<main class="wrap">
+<section id="overview">
+  <h2>The four agent systems</h2>
+  <p class="sub">Built as a custom loop on the OpenAI Chat Completions API (gpt-4o-mini), with code guards that hold regardless of what the model says.</p>
+  <div class="grid">
+    <div class="card"><div class="e">Part B · Chapter 5</div><h3>Buyer Agent</h3><p>One fan, one agent. Plan mode with approval, a think → act → observe loop over six tools, long-term memory and a human purchase gate.</p></div>
+    <div class="card"><div class="e">Part C · Chapters 5–6</div><h3>Negotiation Arena</h3><p>Buyer, seller and platform agents negotiate under a price cap and an 8% fee. Concessions, leakage test and surplus split.</p></div>
+    <div class="card"><div class="e">Part D · Chapter 6</div><h3>Operations Desk</h3><p>A storm postpones a match. A fixed workflow classifies, cites policy and routes 14 orders; large refunds wait for a human.</p></div>
+    <div class="card"><div class="e">Part E · innovation</div><h3>Fair-Drop Desk</h3><p>Organizer releases without the bot race: integrity filter, evidence-grounded tiers, published-seed lottery, AI fairness audit and organizer approval.</p></div>
+  </div>
+  <div class="note"><b>About this site.</b> GitHub Pages serves static files only, so this page shows the app through screenshots and walkthroughs.
+    The interactive Streamlit app runs on your own machine (see <a href="#run">Run it</a>). It needs no API key in its cached demo mode.</div>
+  <figure class="shot"><img src="assets/overview.png" alt="CupSwap overview page" loading="lazy"><figcaption>The Overview page: feature cards, demo guide and the autonomy table.</figcaption></figure>
+</section>
+
+<section id="buyer">
+  <div class="agent">
+    <div>
+      <div class="part">Part B · single agent</div>
+      <h3>Buyer Agent</h3>
+      <p>Same request, two fans, two different answers: long-term memory changes the search, the shortlist and the final choice.</p>
+      <ol>
+        <li>Choose a fan profile: <b>Sofía</b> (Mexico, Dallas) or <b>Julien</b> (France, New York).</li>
+        <li>Click <b>Draft a plan</b>. The agent proposes steps but takes no action.</li>
+        <li>Click <b>Approve plan &amp; run agent</b> and watch the think → act → observe trace.</li>
+        <li>Review the recommendation, then <b>Approve purchase</b> or <b>Decline</b>.</li>
+        <li>Compare long-term memory before and after.</li>
+      </ol>
+      <p><b>Guards:</b> budget, quantity, seats together, match status checked before any hold, one hold per session, 10-step cap.</p>
+    </div>
+    <div>
+      <figure class="shot"><img src="assets/buyer_memory.png" alt="Buyer agent after an approved purchase" loading="lazy"><figcaption>After Sofía approves the purchase: memory before and after, and the diff.</figcaption></figure>
+      <figure class="shot" style="margin-top:14px"><img src="assets/buyer_trace.png" alt="Buyer agent trace" loading="lazy"><figcaption>The agent trace: plan, approval, MCP connection, then think / act / observe cards.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="negotiation">
+  <div class="agent">
+    <div>
+      <div class="part">Part C · multi-agent</div>
+      <h3>Negotiation Arena</h3>
+      <p>A buyer agent with a private ceiling, a seller agent with a hidden floor and a neutral platform agent that verifies the ticket, enforces the price cap and settles.</p>
+      <ol>
+        <li>Pick <b>Deal</b> (listing L10) or <b>No deal</b> (listing L19).</li>
+        <li>Click <b>Run negotiation</b>. At most 5 rounds, with rule-check badges on every offer.</li>
+        <li>On agreement, click <b>Approve purchase</b>; the platform records the settlement and fee.</li>
+        <li>Switch on <b>Analyst view</b> to reveal the hidden limits; read the leakage test and the surplus split.</li>
+      </ol>
+      <p><b>Result in the demo:</b> agreed at $183 per ticket in round 4; platform fee $29.28.</p>
+    </div>
+    <figure class="shot"><img src="assets/nego.png" alt="Negotiation arena" loading="lazy"><figcaption>Transcript, concession chart, shared state, surplus split and leakage test.</figcaption></figure>
+  </div>
+</section>
+
+<section id="operations">
+  <div class="agent">
+    <div>
+      <div class="part">Part D · workflow</div>
+      <h3>Operations Desk</h3>
+      <p>A storm over Miami postpones a match. A fixed workflow handles every affected order, and recovery rules catch the model's mistakes.</p>
+      <ol>
+        <li>Click <b>Ingest weather feed &amp; run the refund-or-keep workflow</b> (14 orders).</li>
+        <li>Work the <b>Approval queue</b>: approve or reject refunds above $500; approve or dismiss account flags; resolve the escalated case.</li>
+        <li>Use the monitor table to tick <b>Escalate</b> on any case.</li>
+        <li>Open the <b>Case inspector</b> for O-1009, O-1010 and O-1014.</li>
+      </ol>
+      <p><b>Recovery rules:</b> O-1010 (retrieval miss, re-query then escalate) and O-1014 (mis-route caught as suspected fraud).</p>
+    </div>
+    <figure class="shot"><img src="assets/ops.png" alt="Operations desk" loading="lazy"><figcaption>Event, summary numbers and the colour-coded workflow diagram.</figcaption></figure>
+  </div>
+</section>
+
+<section id="fairdrop">
+  <div class="agent">
+    <div>
+      <div class="part">Part E · innovation feature</div>
+      <h3>Fair-Drop Desk</h3>
+      <p>When 16 face-value tickets are released and agents out-race humans, first-come-first-served gives a linked ring of accounts all 16. Fair-Drop gives fans without agents 10.</p>
+      <ol>
+        <li>Expand <b>All incoming requests</b> (20 requests, two channels).</li>
+        <li>Click <b>Close the window &amp; run Fair-Drop</b>.</li>
+        <li>Read the comparison chart, integrity table, judge verdict and need assessment.</li>
+        <li>As organizer, click <b>Approve allocation</b> or <b>Send back for revision</b>.</li>
+      </ol>
+      <p><b>Guards:</b> linked-account hold (never auto-ban), prompt-injection defense, symmetric grounding check, seeded and published lottery.</p>
+    </div>
+    <figure class="shot"><img src="assets/fairdrop.png" alt="Fair-Drop desk" loading="lazy"><figcaption>Channel comparison, integrity filter and the fairness judge's verdict.</figcaption></figure>
+  </div>
+</section>
+
+<section id="autonomy">
+  <h2>Where autonomy is placed</h2>
+  <p class="sub">High-stakes, irreversible actions keep an explicit human approval gate; routine actions are monitored.</p>
+  <table>
+    <thead><tr><th>Agent</th><th>Action</th><th>Control</th></tr></thead>
+    <tbody>
+      <tr><td>Buyer agent</td><td>Draft a plan</td><td><span class="pill p-red">Human approves</span></td></tr>
+      <tr><td>Buyer agent</td><td>Search, match status, price history, seller rating</td><td><span class="pill p-blue">Autonomous, traced</span></td></tr>
+      <tr><td>Buyer agent</td><td>Place a 15-minute hold</td><td><span class="pill p-green">Monitored</span></td></tr>
+      <tr><td>Buyer agent</td><td>Purchase</td><td><span class="pill p-red">Human approves</span></td></tr>
+      <tr><td>Negotiation agents</td><td>Offers and counter-offers (5 rounds)</td><td><span class="pill p-green">Monitored + code guards</span></td></tr>
+      <tr><td>Platform agent</td><td>Record settlement</td><td><span class="pill p-red">Only after human approval</span></td></tr>
+      <tr><td>Ops workflow</td><td>Refund up to $500</td><td><span class="pill p-green">Automatic + monitor</span></td></tr>
+      <tr><td>Ops workflow</td><td>Refund above $500; flag an account</td><td><span class="pill p-red">Human approves</span></td></tr>
+      <tr><td>Fair-Drop</td><td>Allocate released tickets</td><td><span class="pill p-red">Organizer approves</span></td></tr>
+      <tr><td>Fair-Drop</td><td>Hold linked accounts for review</td><td><span class="pill p-green">Monitored, never auto-ban</span></td></tr>
+    </tbody>
+  </table>
+  <figure class="shot" style="margin-top:20px"><img src="assets/audit.png" alt="Audit log" loading="lazy"><figcaption>The Audit Log: every state change, who made it and whether a human approved it.</figcaption></figure>
+</section>
+
+<section id="run">
+  <h2>Run it locally</h2>
+  <p class="sub">Cached demo mode replays recorded model responses, so no API key is needed. Tools, guards and approvals run for real on synthetic data.</p>
+<pre><code>git clone https://github.com/gitty-hash/CupSwap.git
+cd CupSwap
+pip install -r requirements.txt
+streamlit run app.py</code></pre>
+  <p>Open <code>http://localhost:8501</code>. For live mode, set <code>OPENAI_API_KEY</code> in your environment and switch the sidebar to <b>Live API</b>.
+     The key is read only from the environment and is never written to disk. The README has step-by-step instructions for every agent.</p>
+</section>
+</main>
+
+<footer><div class="wrap">CupSwap is a fictional platform built for MIS 552 Homework 3. All tools are mocks and all data is synthetic; no real tickets, payments or emails.
+  · <a href="https://github.com/gitty-hash/CupSwap">Source on GitHub</a></div></footer>
+</body>
+</html>

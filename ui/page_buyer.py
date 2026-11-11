@@ -92,7 +92,7 @@ def page() -> None:
                      f'<div class="cs-line" style="font-size:1.05rem"><b>Plan v{b["plan_version"]}</b> '
                      f'{pill("agent is waiting — no action taken yet", "orange")}</div>')
                 render_plan(b["plan"])
-                cA, cB, cC = st.columns([2, 3, 1])
+                cA, cB, cC = st.columns([5, 5, 3])
                 approve = cA.button("Approve plan & run agent", icon=":material/play_arrow:", type="primary")
                 revise = False
                 feedback = None
