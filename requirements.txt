@@ -1,0 +1,6 @@
+streamlit>=1.50
+openai>=1.40
+pandas>=2.0
+plotly>=5.20
+mcp>=2.0
+pytest>=8.0

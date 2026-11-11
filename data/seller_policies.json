@@ -1,0 +1,32 @@
+{
+  "_default": {
+    "floor_ratio": 0.85,
+    "concession": "kickoff_proximity"
+  },
+  "L10": {
+    "seller_id": "S01",
+    "base_floor_per_ticket": 168,
+    "marquee_multiplier": 1.03,
+    "concession": "kickoff_proximity",
+    "persona": "A Dallas local who bought before the bracket resolved; happy to sell but knows Mexico's matches are in demand."
+  },
+  "L19": {
+    "seller_id": "S06",
+    "base_floor_per_ticket": 330,
+    "marquee_multiplier": 1.06,
+    "concession": "kickoff_proximity",
+    "persona": "A Paris-based reseller who knows France vs Portugal is the marquee R16 tie; in no hurry."
+  },
+  "L14": {
+    "seller_id": "S03",
+    "base_floor_per_ticket": 180,
+    "marquee_multiplier": 1.03,
+    "concession": "kickoff_proximity"
+  },
+  "L18": {
+    "seller_id": "S06",
+    "base_floor_per_ticket": 182,
+    "marquee_multiplier": 1.03,
+    "concession": "kickoff_proximity"
+  }
+}

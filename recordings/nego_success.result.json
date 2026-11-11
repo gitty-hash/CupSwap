@@ -1,0 +1,619 @@
+{
+  "state": {
+    "negotiation_id": "N-71BF50",
+    "listing": {
+      "listing_id": "L10",
+      "match_id": "R16-DAL",
+      "match": "Mexico vs Netherlands",
+      "stage": "Round of 16",
+      "city": "Dallas",
+      "kickoff": "2026-07-04T20:00",
+      "category": "Cat 3",
+      "section": "C301",
+      "row": "4",
+      "quantity": 2,
+      "seats_adjacent": true,
+      "seat_note": "",
+      "price_per_ticket": 230,
+      "face_value": 140,
+      "seller_id": "S01",
+      "description": "Front rows of the upper tier behind the Mexico goal, two together. Prime supporters' section."
+    },
+    "quantity": 2,
+    "match": {
+      "match_id": "R16-DAL",
+      "stage": "Round of 16",
+      "teams": "Mexico vs Netherlands",
+      "city": "Dallas",
+      "venue": "Dallas Stadium",
+      "kickoff": "2026-07-04T20:00",
+      "status": "scheduled",
+      "days_to_kickoff": 2.5,
+      "marquee_matchup": true
+    },
+    "rules": {
+      "price_cap_per_ticket": 210.0,
+      "cap_rule": "resale price <= 1.5x face value",
+      "platform_fee_rate": 0.08,
+      "max_rounds": 5
+    },
+    "ruling": {
+      "trading_allowed": true,
+      "enforced_opening_price": 210,
+      "badges": [],
+      "note": "Ticket verified and asking price exceeds the resale cap.",
+      "verified": true,
+      "ask_capped": true
+    },
+    "history": [
+      {
+        "round": 0,
+        "role": "Seller agent",
+        "action": "ask",
+        "price_per_ticket": 210,
+        "message": "Listed: Front rows of the upper tier behind the Mexico goal, two together. Prime supporters' section.",
+        "platform_checks": [
+          {
+            "rule": "price cap",
+            "ok": true,
+            "detail": "$210.00 vs cap $210.00"
+          },
+          {
+            "rule": "ticket verified",
+            "ok": true,
+            "detail": "verify_ticket"
+          }
+        ],
+        "guards": [
+          "Ask reduced to the price cap"
+        ]
+      },
+      {
+        "round": 1,
+        "role": "Buyer agent",
+        "action": "offer",
+        "price_per_ticket": 162.0,
+        "message": "I appreciate the listing, but I can only offer $162 per ticket for these seats. Let me know if that works for you.",
+        "platform_checks": [
+          {
+            "rule": "price cap",
+            "ok": true,
+            "detail": "$162.00 vs cap $210.00"
+          },
+          {
+            "rule": "ticket verified",
+            "ok": true,
+            "detail": "verify_ticket"
+          }
+        ],
+        "guards": []
+      },
+      {
+        "round": 1,
+        "role": "Seller agent",
+        "action": "counter",
+        "price_per_ticket": 204.0,
+        "message": "Thanks for your offer! Given the high demand for Mexico's matches and the prime location of these seats, I can meet you at $204 per ticket. Let me know if that works!",
+        "platform_checks": [
+          {
+            "rule": "price cap",
+            "ok": true,
+            "detail": "$204.00 vs cap $210.00"
+          },
+          {
+            "rule": "ticket verified",
+            "ok": true,
+            "detail": "verify_ticket"
+          }
+        ],
+        "guards": []
+      },
+      {
+        "round": 2,
+        "role": "Buyer agent",
+        "action": "offer",
+        "price_per_ticket": 169.0,
+        "message": "Thank you for your response. I can increase my offer to $169 per ticket. Please let me know if this works for you.",
+        "platform_checks": [
+          {
+            "rule": "price cap",
+            "ok": true,
+            "detail": "$169.00 vs cap $210.00"
+          },
+          {
+            "rule": "ticket verified",
+            "ok": true,
+            "detail": "verify_ticket"
+          }
+        ],
+        "guards": []
+      },
+      {
+        "round": 2,
+        "role": "Seller agent",
+        "action": "counter",
+        "price_per_ticket": 196.0,
+        "message": "I appreciate your increased offer! Given the popularity of Mexico's matches and the prime location of these seats, I can counter at $196 per ticket. Let me know your thoughts!",
+        "platform_checks": [
+          {
+            "rule": "price cap",
+            "ok": true,
+            "detail": "$196.00 vs cap $210.00"
+          },
+          {
+            "rule": "ticket verified",
+            "ok": true,
+            "detail": "verify_ticket"
+          }
+        ],
+        "guards": []
+      },
+      {
+        "round": 3,
+        "role": "Buyer agent",
+        "action": "offer",
+        "price_per_ticket": 176.0,
+        "message": "Thank you for your counter. I can offer $176 per ticket for these seats. Please let me know if this works for you.",
+        "platform_checks": [
+          {
+            "rule": "price cap",
+            "ok": true,
+            "detail": "$176.00 vs cap $210.00"
+          },
+          {
+            "rule": "ticket verified",
+            "ok": true,
+            "detail": "verify_ticket"
+          }
+        ],
+        "guards": []
+      },
+      {
+        "round": 3,
+        "role": "Seller agent",
+        "action": "counter",
+        "price_per_ticket": 186.0,
+        "message": "Thanks for your offer! Considering the high demand for Mexico's matches and the prime location of these seats, I can meet you at $186 per ticket. Let me know if that works for you!",
+        "platform_checks": [
+          {
+            "rule": "price cap",
+            "ok": true,
+            "detail": "$186.00 vs cap $210.00"
+          },
+          {
+            "rule": "ticket verified",
+            "ok": true,
+            "detail": "verify_ticket"
+          }
+        ],
+        "guards": []
+      },
+      {
+        "round": 4,
+        "role": "Buyer agent",
+        "action": "offer",
+        "price_per_ticket": 183.0,
+        "message": "I appreciate your counter. I can increase my offer to $183 per ticket for these seats. Please let me know if this works for you.",
+        "platform_checks": [
+          {
+            "rule": "price cap",
+            "ok": true,
+            "detail": "$183.00 vs cap $210.00"
+          },
+          {
+            "rule": "ticket verified",
+            "ok": true,
+            "detail": "verify_ticket"
+          }
+        ],
+        "guards": []
+      },
+      {
+        "round": 4,
+        "role": "Seller agent",
+        "action": "accept",
+        "price_per_ticket": 183.0,
+        "message": "Thank you for your offer! Given the excitement surrounding Mexico's matches and the prime seating location, I can meet you at $180 per ticket. Let me know if that works! [platform note: binding price is $183/ticket; figures in the text are not binding]",
+        "platform_checks": [
+          {
+            "rule": "price cap",
+            "ok": true,
+            "detail": "$183.00 vs cap $210.00"
+          },
+          {
+            "rule": "ticket verified",
+            "ok": true,
+            "detail": "verify_ticket"
+          }
+        ],
+        "guards": [
+          "Seller counter met the buyer's offer → treated as acceptance",
+          "Message quoted $180 but the binding offer is $183 → message annotated"
+        ]
+      }
+    ],
+    "status": "settled",
+    "deal_price_per_ticket": 183.0,
+    "buyer": "sofia",
+    "seller": "S01",
+    "label": "Deal: Sofía's agent × listing L10 (Mexico vs Netherlands, Dallas, ask above cap)",
+    "_private": {
+      "seller_floor": 173,
+      "buyer_ceiling": 190.0,
+      "concession_rate": 0.3,
+      "days_to_kickoff": 2.5,
+      "base_floor": 168,
+      "marquee_adjustment": 1.03,
+      "buyer_anchor": 162
+    },
+    "surplus": {
+      "deal_price": 183.0,
+      "quantity": 2,
+      "zopa_per_ticket": 17.0,
+      "buyer_surplus": 14.0,
+      "seller_surplus_after_fee": -9.28,
+      "platform_fee": 29.28
+    },
+    "settlement": {
+      "negotiation_id": "N-71BF50",
+      "listing_id": "L10",
+      "price_per_ticket": 183.0,
+      "quantity": 2,
+      "buyer_total": 366.0,
+      "platform_fee": 29.28,
+      "seller_proceeds": 336.72,
+      "fee_rate": 0.08
+    },
+    "leakage": []
+  },
+  "trace": [
+    {
+      "step": 1,
+      "kind": "platform",
+      "agent": "Platform agent",
+      "title": "Platform agent reviews the listing before trading opens",
+      "detail": "Listing L10: Mexico vs Netherlands · Cat 3 §C301",
+      "data": null,
+      "status": "info",
+      "at": "16:42:26"
+    },
+    {
+      "step": 1,
+      "kind": "act",
+      "agent": "Platform agent",
+      "title": "verify_ticket(L10)",
+      "detail": "Barcodes registered to the seller and not previously transferred.",
+      "data": null,
+      "status": "ok",
+      "at": "16:42:27"
+    },
+    {
+      "step": 1,
+      "kind": "act",
+      "agent": "Platform agent",
+      "title": "get_price_cap(L10)",
+      "detail": "Face $140 → cap $210.0; ask $230 exceeds the cap",
+      "data": null,
+      "status": "warn",
+      "at": "16:42:28"
+    },
+    {
+      "step": 1,
+      "kind": "platform",
+      "agent": "Platform agent",
+      "title": "Ruling published",
+      "detail": "Ticket verified and asking price exceeds the resale cap.",
+      "data": {
+        "trading_allowed": true,
+        "enforced_opening_price": 210,
+        "badges": [],
+        "note": "Ticket verified and asking price exceeds the resale cap.",
+        "verified": true,
+        "ask_capped": true
+      },
+      "status": "ok",
+      "at": "16:42:29"
+    },
+    {
+      "step": 2,
+      "kind": "offer",
+      "agent": "Seller agent",
+      "title": "Round 0 · Seller agent · ask $210.00/ticket",
+      "detail": "Listed: Front rows of the upper tier behind the Mexico goal, two together. Prime supporters' section.",
+      "data": {
+        "checks": [
+          {
+            "rule": "price cap",
+            "ok": true,
+            "detail": "$210.00 vs cap $210.00"
+          },
+          {
+            "rule": "ticket verified",
+            "ok": true,
+            "detail": "verify_ticket"
+          }
+        ],
+        "guards": [
+          "Ask reduced to the price cap"
+        ]
+      },
+      "status": "info",
+      "at": "16:42:29"
+    },
+    {
+      "step": 2,
+      "kind": "guard",
+      "agent": "Policy guard (code)",
+      "title": "Ask reduced to the price cap",
+      "detail": "",
+      "data": null,
+      "status": "warn",
+      "at": "16:42:29"
+    },
+    {
+      "step": 3,
+      "kind": "offer",
+      "agent": "Buyer agent",
+      "title": "Round 1 · Buyer agent · offer $162.00/ticket",
+      "detail": "I appreciate the listing, but I can only offer $162 per ticket for these seats. Let me know if that works for you.",
+      "data": {
+        "checks": [
+          {
+            "rule": "price cap",
+            "ok": true,
+            "detail": "$162.00 vs cap $210.00"
+          },
+          {
+            "rule": "ticket verified",
+            "ok": true,
+            "detail": "verify_ticket"
+          }
+        ],
+        "guards": []
+      },
+      "status": "info",
+      "at": "16:42:30"
+    },
+    {
+      "step": 3,
+      "kind": "offer",
+      "agent": "Seller agent",
+      "title": "Round 1 · Seller agent · counter $204.00/ticket",
+      "detail": "Thanks for your offer! Given the high demand for Mexico's matches and the prime location of these seats, I can meet you at $204 per ticket. Let me know if that works!",
+      "data": {
+        "checks": [
+          {
+            "rule": "price cap",
+            "ok": true,
+            "detail": "$204.00 vs cap $210.00"
+          },
+          {
+            "rule": "ticket verified",
+            "ok": true,
+            "detail": "verify_ticket"
+          }
+        ],
+        "guards": []
+      },
+      "status": "info",
+      "at": "16:42:31"
+    },
+    {
+      "step": 4,
+      "kind": "offer",
+      "agent": "Buyer agent",
+      "title": "Round 2 · Buyer agent · offer $169.00/ticket",
+      "detail": "Thank you for your response. I can increase my offer to $169 per ticket. Please let me know if this works for you.",
+      "data": {
+        "checks": [
+          {
+            "rule": "price cap",
+            "ok": true,
+            "detail": "$169.00 vs cap $210.00"
+          },
+          {
+            "rule": "ticket verified",
+            "ok": true,
+            "detail": "verify_ticket"
+          }
+        ],
+        "guards": []
+      },
+      "status": "info",
+      "at": "16:42:32"
+    },
+    {
+      "step": 4,
+      "kind": "offer",
+      "agent": "Seller agent",
+      "title": "Round 2 · Seller agent · counter $196.00/ticket",
+      "detail": "I appreciate your increased offer! Given the popularity of Mexico's matches and the prime location of these seats, I can counter at $196 per ticket. Let me know your thoughts!",
+      "data": {
+        "checks": [
+          {
+            "rule": "price cap",
+            "ok": true,
+            "detail": "$196.00 vs cap $210.00"
+          },
+          {
+            "rule": "ticket verified",
+            "ok": true,
+            "detail": "verify_ticket"
+          }
+        ],
+        "guards": []
+      },
+      "status": "info",
+      "at": "16:42:34"
+    },
+    {
+      "step": 5,
+      "kind": "offer",
+      "agent": "Buyer agent",
+      "title": "Round 3 · Buyer agent · offer $176.00/ticket",
+      "detail": "Thank you for your counter. I can offer $176 per ticket for these seats. Please let me know if this works for you.",
+      "data": {
+        "checks": [
+          {
+            "rule": "price cap",
+            "ok": true,
+            "detail": "$176.00 vs cap $210.00"
+          },
+          {
+            "rule": "ticket verified",
+            "ok": true,
+            "detail": "verify_ticket"
+          }
+        ],
+        "guards": []
+      },
+      "status": "info",
+      "at": "16:42:35"
+    },
+    {
+      "step": 5,
+      "kind": "offer",
+      "agent": "Seller agent",
+      "title": "Round 3 · Seller agent · counter $186.00/ticket",
+      "detail": "Thanks for your offer! Considering the high demand for Mexico's matches and the prime location of these seats, I can meet you at $186 per ticket. Let me know if that works for you!",
+      "data": {
+        "checks": [
+          {
+            "rule": "price cap",
+            "ok": true,
+            "detail": "$186.00 vs cap $210.00"
+          },
+          {
+            "rule": "ticket verified",
+            "ok": true,
+            "detail": "verify_ticket"
+          }
+        ],
+        "guards": []
+      },
+      "status": "info",
+      "at": "16:42:36"
+    },
+    {
+      "step": 6,
+      "kind": "offer",
+      "agent": "Buyer agent",
+      "title": "Round 4 · Buyer agent · offer $183.00/ticket",
+      "detail": "I appreciate your counter. I can increase my offer to $183 per ticket for these seats. Please let me know if this works for you.",
+      "data": {
+        "checks": [
+          {
+            "rule": "price cap",
+            "ok": true,
+            "detail": "$183.00 vs cap $210.00"
+          },
+          {
+            "rule": "ticket verified",
+            "ok": true,
+            "detail": "verify_ticket"
+          }
+        ],
+        "guards": []
+      },
+      "status": "info",
+      "at": "16:42:37"
+    },
+    {
+      "step": 6,
+      "kind": "offer",
+      "agent": "Seller agent",
+      "title": "Round 4 · Seller agent · accept $183.00/ticket",
+      "detail": "Thank you for your offer! Given the excitement surrounding Mexico's matches and the prime seating location, I can meet you at $180 per ticket. Let me know if that works! [platform note: binding price is $183/ticket; figures in the text are not binding]",
+      "data": {
+        "checks": [
+          {
+            "rule": "price cap",
+            "ok": true,
+            "detail": "$183.00 vs cap $210.00"
+          },
+          {
+            "rule": "ticket verified",
+            "ok": true,
+            "detail": "verify_ticket"
+          }
+        ],
+        "guards": [
+          "Seller counter met the buyer's offer → treated as acceptance",
+          "Message quoted $180 but the binding offer is $183 → message annotated"
+        ]
+      },
+      "status": "ok",
+      "at": "16:42:38"
+    },
+    {
+      "step": 6,
+      "kind": "guard",
+      "agent": "Policy guard (code)",
+      "title": "Seller counter met the buyer's offer → treated as acceptance",
+      "detail": "",
+      "data": null,
+      "status": "warn",
+      "at": "16:42:38"
+    },
+    {
+      "step": 6,
+      "kind": "guard",
+      "agent": "Policy guard (code)",
+      "title": "Message quoted $180 but the binding offer is $183 → message annotated",
+      "detail": "",
+      "data": null,
+      "status": "warn",
+      "at": "16:42:38"
+    },
+    {
+      "step": 7,
+      "kind": "human",
+      "agent": "Protocol",
+      "title": "Agreement reached — waiting for the HUMAN buyer to approve",
+      "detail": "$183.00/ticket × 2 = $366.00. Nothing executes until approved.",
+      "data": null,
+      "status": "ok",
+      "at": "16:42:38"
+    },
+    {
+      "step": 8,
+      "kind": "human",
+      "agent": "Human",
+      "title": "Purchase APPROVED by the human buyer",
+      "detail": "Platform agent settles the deal.",
+      "data": null,
+      "status": "ok",
+      "at": "16:42:38"
+    },
+    {
+      "step": 8,
+      "kind": "act",
+      "agent": "Platform agent",
+      "title": "compute_fee($183, ×2)",
+      "detail": "buyer pays $366, fee $29.28, seller receives $336.72",
+      "data": null,
+      "status": "info",
+      "at": "16:42:39"
+    },
+    {
+      "step": 8,
+      "kind": "act",
+      "agent": "Platform agent",
+      "title": "record_settlement(...)",
+      "detail": "Written to the settlement ledger (mock).",
+      "data": null,
+      "status": "ok",
+      "at": "16:42:40"
+    },
+    {
+      "step": 8,
+      "kind": "platform",
+      "agent": "Platform agent",
+      "title": "Settlement summary",
+      "detail": "Settlement completed: the buyer paid $366 for 2 tickets at $183 each, with a platform fee of $29.28 and seller proceeds of $336.72.",
+      "data": null,
+      "status": "ok",
+      "at": "16:42:41"
+    }
+  ]
+}

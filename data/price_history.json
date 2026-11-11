@@ -1,0 +1,390 @@
+{
+  "R16-DAL": {
+    "series": [
+      {
+        "date": "2026-06-20",
+        "median_price": 123
+      },
+      {
+        "date": "2026-06-21",
+        "median_price": 122
+      },
+      {
+        "date": "2026-06-22",
+        "median_price": 117
+      },
+      {
+        "date": "2026-06-23",
+        "median_price": 119
+      },
+      {
+        "date": "2026-06-24",
+        "median_price": 124
+      },
+      {
+        "date": "2026-06-25",
+        "median_price": 120
+      },
+      {
+        "date": "2026-06-26",
+        "median_price": 116
+      },
+      {
+        "date": "2026-06-27",
+        "median_price": 164
+      },
+      {
+        "date": "2026-06-28",
+        "median_price": 166
+      },
+      {
+        "date": "2026-06-29",
+        "median_price": 159
+      },
+      {
+        "date": "2026-06-30",
+        "median_price": 225
+      },
+      {
+        "date": "2026-07-01",
+        "median_price": 235
+      },
+      {
+        "date": "2026-07-02",
+        "median_price": 234
+      }
+    ],
+    "events": [
+      {
+        "date": "2026-06-27",
+        "event": "Mexico wins Group A -> projected into the Dallas R16 slot",
+        "impact": "+35%"
+      },
+      {
+        "date": "2026-06-30",
+        "event": "Mexico beats Ecuador 2-0 in Houston (R32); Netherlands confirmed as opponent",
+        "impact": "+42%"
+      }
+    ]
+  },
+  "R16-HOU": {
+    "series": [
+      {
+        "date": "2026-06-20",
+        "median_price": 154
+      },
+      {
+        "date": "2026-06-21",
+        "median_price": 148
+      },
+      {
+        "date": "2026-06-22",
+        "median_price": 147
+      },
+      {
+        "date": "2026-06-23",
+        "median_price": 153
+      },
+      {
+        "date": "2026-06-24",
+        "median_price": 153
+      },
+      {
+        "date": "2026-06-25",
+        "median_price": 146
+      },
+      {
+        "date": "2026-06-26",
+        "median_price": 148
+      },
+      {
+        "date": "2026-06-27",
+        "median_price": 154
+      },
+      {
+        "date": "2026-06-28",
+        "median_price": 150
+      },
+      {
+        "date": "2026-06-29",
+        "median_price": 182
+      },
+      {
+        "date": "2026-06-30",
+        "median_price": 188
+      },
+      {
+        "date": "2026-07-01",
+        "median_price": 212
+      },
+      {
+        "date": "2026-07-02",
+        "median_price": 204
+      }
+    ],
+    "events": [
+      {
+        "date": "2026-06-29",
+        "event": "USA advances; Argentina vs USA locked in",
+        "impact": "+25%"
+      }
+    ]
+  },
+  "R16-NYNJ": {
+    "series": [
+      {
+        "date": "2026-06-20",
+        "median_price": 141
+      },
+      {
+        "date": "2026-06-21",
+        "median_price": 136
+      },
+      {
+        "date": "2026-06-22",
+        "median_price": 140
+      },
+      {
+        "date": "2026-06-23",
+        "median_price": 144
+      },
+      {
+        "date": "2026-06-24",
+        "median_price": 138
+      },
+      {
+        "date": "2026-06-25",
+        "median_price": 136
+      },
+      {
+        "date": "2026-06-26",
+        "median_price": 114
+      },
+      {
+        "date": "2026-06-27",
+        "median_price": 114
+      },
+      {
+        "date": "2026-06-28",
+        "median_price": 109
+      },
+      {
+        "date": "2026-06-29",
+        "median_price": 110
+      },
+      {
+        "date": "2026-06-30",
+        "median_price": 196
+      },
+      {
+        "date": "2026-07-01",
+        "median_price": 192
+      },
+      {
+        "date": "2026-07-02",
+        "median_price": 185
+      }
+    ],
+    "events": [
+      {
+        "date": "2026-06-26",
+        "event": "England knocked out; slot projection falls",
+        "impact": "-20%"
+      },
+      {
+        "date": "2026-06-30",
+        "event": "France beats Senegal; France vs Portugal confirmed",
+        "impact": "+70%"
+      }
+    ]
+  },
+  "R16-SEA": {
+    "series": [
+      {
+        "date": "2026-06-20",
+        "median_price": 166
+      },
+      {
+        "date": "2026-06-21",
+        "median_price": 167
+      },
+      {
+        "date": "2026-06-22",
+        "median_price": 175
+      },
+      {
+        "date": "2026-06-23",
+        "median_price": 172
+      },
+      {
+        "date": "2026-06-24",
+        "median_price": 165
+      },
+      {
+        "date": "2026-06-25",
+        "median_price": 170
+      },
+      {
+        "date": "2026-06-26",
+        "median_price": 175
+      },
+      {
+        "date": "2026-06-27",
+        "median_price": 169
+      },
+      {
+        "date": "2026-06-28",
+        "median_price": 116
+      },
+      {
+        "date": "2026-06-29",
+        "median_price": 121
+      },
+      {
+        "date": "2026-06-30",
+        "median_price": 122
+      },
+      {
+        "date": "2026-07-01",
+        "median_price": 117
+      },
+      {
+        "date": "2026-07-02",
+        "median_price": 117
+      }
+    ],
+    "events": [
+      {
+        "date": "2026-06-28",
+        "event": "Hosts' slot goes to Japan vs Croatia (lower-profile tie)",
+        "impact": "-30%"
+      }
+    ]
+  },
+  "QF-KC": {
+    "series": [
+      {
+        "date": "2026-06-20",
+        "median_price": 223
+      },
+      {
+        "date": "2026-06-21",
+        "median_price": 233
+      },
+      {
+        "date": "2026-06-22",
+        "median_price": 236
+      },
+      {
+        "date": "2026-06-23",
+        "median_price": 226
+      },
+      {
+        "date": "2026-06-24",
+        "median_price": 225
+      },
+      {
+        "date": "2026-06-25",
+        "median_price": 236
+      },
+      {
+        "date": "2026-06-26",
+        "median_price": 233
+      },
+      {
+        "date": "2026-06-27",
+        "median_price": 224
+      },
+      {
+        "date": "2026-06-28",
+        "median_price": 228
+      },
+      {
+        "date": "2026-06-29",
+        "median_price": 237
+      },
+      {
+        "date": "2026-06-30",
+        "median_price": 264
+      },
+      {
+        "date": "2026-07-01",
+        "median_price": 257
+      },
+      {
+        "date": "2026-07-02",
+        "median_price": 267
+      }
+    ],
+    "events": [
+      {
+        "date": "2026-06-30",
+        "event": "Mexico could reach this QF; speculative demand",
+        "impact": "+15%"
+      }
+    ]
+  },
+  "QF-LA": {
+    "series": [
+      {
+        "date": "2026-06-20",
+        "median_price": 297
+      },
+      {
+        "date": "2026-06-21",
+        "median_price": 309
+      },
+      {
+        "date": "2026-06-22",
+        "median_price": 300
+      },
+      {
+        "date": "2026-06-23",
+        "median_price": 291
+      },
+      {
+        "date": "2026-06-24",
+        "median_price": 302
+      },
+      {
+        "date": "2026-06-25",
+        "median_price": 308
+      },
+      {
+        "date": "2026-06-26",
+        "median_price": 296
+      },
+      {
+        "date": "2026-06-27",
+        "median_price": 293
+      },
+      {
+        "date": "2026-06-28",
+        "median_price": 306
+      },
+      {
+        "date": "2026-06-29",
+        "median_price": 306
+      },
+      {
+        "date": "2026-06-30",
+        "median_price": 316
+      },
+      {
+        "date": "2026-07-01",
+        "median_price": 320
+      },
+      {
+        "date": "2026-07-02",
+        "median_price": 333
+      }
+    ],
+    "events": [
+      {
+        "date": "2026-06-30",
+        "event": "France on this side of the bracket",
+        "impact": "+8%"
+      }
+    ]
+  }
+}

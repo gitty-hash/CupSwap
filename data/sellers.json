@@ -1,0 +1,102 @@
+[
+  {
+    "seller_id": "S01",
+    "display_name": "LoneStarFutbol",
+    "rating": 4.7,
+    "completed_sales": 58,
+    "on_time_transfer_rate": 0.98,
+    "account_age_days": 1460,
+    "open_disputes": 0,
+    "home_city": "Dallas"
+  },
+  {
+    "seller_id": "S02",
+    "display_name": "OranjeTravels",
+    "rating": 4.5,
+    "completed_sales": 21,
+    "on_time_transfer_rate": 0.95,
+    "account_age_days": 720,
+    "open_disputes": 0,
+    "home_city": "Amsterdam"
+  },
+  {
+    "seller_id": "S03",
+    "display_name": "AztecaTickets",
+    "rating": 4.9,
+    "completed_sales": 134,
+    "on_time_transfer_rate": 0.99,
+    "account_age_days": 2190,
+    "open_disputes": 0,
+    "home_city": "Dallas"
+  },
+  {
+    "seller_id": "S04",
+    "display_name": "BracketBuster",
+    "rating": 4.2,
+    "completed_sales": 40,
+    "on_time_transfer_rate": 0.93,
+    "account_age_days": 400,
+    "open_disputes": 1,
+    "home_city": "Houston"
+  },
+  {
+    "seller_id": "S05",
+    "display_name": "GothamGoals",
+    "rating": 4.6,
+    "completed_sales": 77,
+    "on_time_transfer_rate": 0.97,
+    "account_age_days": 1100,
+    "open_disputes": 0,
+    "home_city": "New York"
+  },
+  {
+    "seller_id": "S06",
+    "display_name": "LesBleusResale",
+    "rating": 4.8,
+    "completed_sales": 63,
+    "on_time_transfer_rate": 0.99,
+    "account_age_days": 980,
+    "open_disputes": 0,
+    "home_city": "Paris"
+  },
+  {
+    "seller_id": "S07",
+    "display_name": "RainCitySeats",
+    "rating": 4.4,
+    "completed_sales": 18,
+    "on_time_transfer_rate": 0.94,
+    "account_age_days": 610,
+    "open_disputes": 0,
+    "home_city": "Seattle"
+  },
+  {
+    "seller_id": "S08",
+    "display_name": "HudsonFlip",
+    "rating": 3.1,
+    "completed_sales": 9,
+    "on_time_transfer_rate": 0.71,
+    "account_age_days": 95,
+    "open_disputes": 2,
+    "home_city": "Newark"
+  },
+  {
+    "seller_id": "S09",
+    "display_name": "QuickTix_2026",
+    "rating": 2.3,
+    "completed_sales": 3,
+    "on_time_transfer_rate": 0.5,
+    "account_age_days": 3,
+    "open_disputes": 2,
+    "home_city": "unknown"
+  },
+  {
+    "seller_id": "S10",
+    "display_name": "MidwestMatchday",
+    "rating": 4.6,
+    "completed_sales": 35,
+    "on_time_transfer_rate": 0.97,
+    "account_age_days": 830,
+    "open_disputes": 0,
+    "home_city": "Kansas City"
+  }
+]

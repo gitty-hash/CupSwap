@@ -1,0 +1,187 @@
+{
+  "scenario": "smoke_buyer_sofia",
+  "model": "gpt-4o-mini",
+  "mode": "live",
+  "recorded_at": "2026-11-10T16:18:09",
+  "inputs": {},
+  "calls": {
+    "plan:v1": {
+      "response": {
+        "content": "{\"goal_summary\":\"Find two tickets together for a Round-of-16 match under $400 total.\",\"constraints\":{\"quantity\":2,\"max_total_budget\":400,\"city\":null,\"stage\":\"R16\",\"seats_together\":true},\"steps\":[{\"step\":1,\"action\":\"Search for active listings for Round-of-16 matches in the specified budget and quantity.\",\"tool\":\"search_listings\",\"why\":\"To find available tickets that meet the quantity and budget constraints.\"},{\"step\":2,\"action\":\"Check the match status of the found listings to ensure they are confirmed and not postponed.\",\"tool\":\"check_match_status\",\"why\":\"To verify that the matches are still scheduled as planned.\"},{\"step\":3,\"action\":\"Get seller ratings for the listings to ensure they meet the minimum seller rating requirement.\",\"tool\":\"get_seller_rating\",\"why\":\"To ensure that the sellers have a good reputation and a long track record.\"},{\"step\":4,\"action\":\"Place a hold on a suitable listing that meets all criteria.\",\"tool\":\"place_hold\",\"why\":\"To secure the tickets temporarily while finalizing the purchase.\"},{\"step\":5,\"action\":\"Submit a recommendation to finalize the session with the selected tickets.\",\"tool\":\"submit_recommendation\",\"why\":\"To conclude the process and provide the final ticket options to the fan.\"}],\"memory_applied\":[],\"assumptions\":[] }",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 752,
+        "completion_tokens": 275,
+        "latency_s": 5.84
+      },
+      "last_user_or_tool_msg": "Fan request: Get me two tickets together for a Round-of-16 match, under $400 total."
+    },
+    "react:1": {
+      "response": {
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_DcKcKIC6fXXgQeBD5lLz3ICZ",
+            "name": "search_listings",
+            "arguments": "{\"thought\":\"I am starting by searching for active listings for Round-of-16 matches to find suitable options for Sofía.\",\"match_id\":null,\"city\":null,\"stage\":\"R16\",\"team\":null,\"max_price_per_ticket\":200,\"min_quantity\":2,\"adjacent_only\":true}"
+          }
+        ],
+        "finish_reason": "tool_calls"
+      },
+      "usage": {
+        "prompt_tokens": 1236,
+        "completion_tokens": 71,
+        "latency_s": 1.88
+      },
+      "last_user_or_tool_msg": "Request: Get me two tickets together for a Round-of-16 match, under $400 total.\n\nApproved plan:\n1. Search for active listings for Round-of-16 matches in the specified budget and quantity. [search_listings]\n2. Check the match status of the found listings to ensure they are confirmed and not postponed"
+    },
+    "react:2": {
+      "response": {
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_qnktqIlTO1YHBfldDUNrqi2b",
+            "name": "check_match_status",
+            "arguments": "{\"thought\":\"I will check the match status for the listings found to ensure they are confirmed and not postponed.\",\"match_id\":\"R16-DAL\"}"
+          }
+        ],
+        "finish_reason": "tool_calls"
+      },
+      "usage": {
+        "prompt_tokens": 2289,
+        "completion_tokens": 40,
+        "latency_s": 1.57
+      },
+      "last_user_or_tool_msg": "{\"count\": 7, \"results\": [{\"listing_id\": \"L09\", \"match_id\": \"R16-DAL\", \"match\": \"Mexico vs Netherlands\", \"stage\": \"Round of 16\", \"city\": \"Dallas\", \"kickoff\": \"2026-07-04T20:00\", \"category\": \"Cat 3\", \"section\": \"C330\", \"row\": \"30\", \"quantity\": 2, \"seats_adjacent\": true, \"seat_note\": \"\", \"price_per_tic"
+    },
+    "react:3": {
+      "response": {
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_uW4ra96yO41xWIYkME6Q4yfz",
+            "name": "check_match_status",
+            "arguments": "{\"thought\":\"Next, I will check the match status for the Argentina vs USA match in Houston to ensure it is confirmed.\",\"match_id\":\"R16-HOU\"}"
+          }
+        ],
+        "finish_reason": "tool_calls"
+      },
+      "usage": {
+        "prompt_tokens": 2420,
+        "completion_tokens": 43,
+        "latency_s": 1.12
+      },
+      "last_user_or_tool_msg": "{\"match_id\": \"R16-DAL\", \"stage\": \"Round of 16\", \"teams\": \"Mexico vs Netherlands\", \"city\": \"Dallas\", \"venue\": \"Dallas Stadium\", \"kickoff\": \"2026-07-04T20:00\", \"status\": \"scheduled\", \"days_to_kickoff\": 2.5, \"marquee_matchup\": true}"
+    },
+    "react:4": {
+      "response": {
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_MUAmHKFjD6L9CE5wJJJBQ8ul",
+            "name": "check_match_status",
+            "arguments": "{\"thought\":\"I will now check the match status for the France vs Portugal match to ensure it is confirmed.\",\"match_id\":\"R16-NYNJ\"}"
+          }
+        ],
+        "finish_reason": "tool_calls"
+      },
+      "usage": {
+        "prompt_tokens": 2554,
+        "completion_tokens": 41,
+        "latency_s": 1.05
+      },
+      "last_user_or_tool_msg": "{\"match_id\": \"R16-HOU\", \"stage\": \"Round of 16\", \"teams\": \"Argentina vs USA\", \"city\": \"Houston\", \"venue\": \"Houston Stadium\", \"kickoff\": \"2026-07-04T16:00\", \"status\": \"scheduled\", \"days_to_kickoff\": 2.3, \"marquee_matchup\": true}"
+    },
+    "react:5": {
+      "response": {
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_pu5lNZk3a6UjMbDiBgxRhaZU",
+            "name": "check_match_status",
+            "arguments": "{\"thought\":\"Now, I will check the match status for the Japan vs Croatia match to ensure it is confirmed.\",\"match_id\":\"R16-SEA\"}"
+          }
+        ],
+        "finish_reason": "tool_calls"
+      },
+      "usage": {
+        "prompt_tokens": 2693,
+        "completion_tokens": 41,
+        "latency_s": 1.26
+      },
+      "last_user_or_tool_msg": "{\"match_id\": \"R16-NYNJ\", \"stage\": \"Round of 16\", \"teams\": \"France vs Portugal\", \"city\": \"New York New Jersey\", \"venue\": \"New York New Jersey Stadium\", \"kickoff\": \"2026-07-05T19:00\", \"status\": \"scheduled\", \"days_to_kickoff\": 3.4, \"marquee_matchup\": true}"
+    },
+    "react:6": {
+      "response": {
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_UG6cxJJpJQDnrFdM3h7w78Lg",
+            "name": "get_seller_rating",
+            "arguments": "{\"thought\":\"I will now check the seller ratings for the listings that have been confirmed to ensure they meet the minimum seller rating requirement.\",\"seller_id\":\"S09\"}"
+          }
+        ],
+        "finish_reason": "tool_calls"
+      },
+      "usage": {
+        "prompt_tokens": 2825,
+        "completion_tokens": 44,
+        "latency_s": 1.22
+      },
+      "last_user_or_tool_msg": "{\"match_id\": \"R16-SEA\", \"stage\": \"Round of 16\", \"teams\": \"Japan vs Croatia\", \"city\": \"Seattle\", \"venue\": \"Seattle Stadium\", \"kickoff\": \"2026-07-06T17:00\", \"status\": \"scheduled\", \"days_to_kickoff\": 4.3, \"marquee_matchup\": false}"
+    },
+    "react:7": {
+      "response": {
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_QYw7TyztSn0XtE4qWl93l75P",
+            "name": "get_seller_rating",
+            "arguments": "{\"thought\":\"Next, I will check the seller rating for the second listing from seller S03 to ensure it meets the minimum seller rating requirement.\",\"seller_id\":\"S03\"}"
+          }
+        ],
+        "finish_reason": "tool_calls"
+      },
+      "usage": {
+        "prompt_tokens": 2949,
+        "completion_tokens": 46,
+        "latency_s": 1.22
+      },
+      "last_user_or_tool_msg": "{\"seller_id\": \"S09\", \"display_name\": \"QuickTix_2026\", \"rating\": 2.3, \"completed_sales\": 3, \"on_time_transfer_rate\": 0.5, \"account_age_days\": 3, \"open_disputes\": 2, \"home_city\": \"unknown\"}"
+    },
+    "react:8": {
+      "response": {
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_s3IQpOWnO74u0vzas0DabQqu",
+            "name": "get_seller_rating",
+            "arguments": "{\"thought\":\"Now, I will check the seller rating for the France vs Portugal match from seller S08 to ensure it meets the minimum seller rating requirement.\",\"seller_id\":\"S08\"}"
+          }
+        ],
+        "finish_reason": "tool_calls"
+      },
+      "usage": {
+        "prompt_tokens": 3074,
+        "completion_tokens": 48,
+        "latency_s": 1.65
+      },
+      "last_user_or_tool_msg": "{\"seller_id\": \"S03\", \"display_name\": \"AztecaTickets\", \"rating\": 4.9, \"completed_sales\": 134, \"on_time_transfer_rate\": 0.99, \"account_age_days\": 2190, \"open_disputes\": 0, \"home_city\": \"Dallas\"}"
+    },
+    "reflect:approved": {
+      "response": {
+        "content": "{\"notes_to_add\":[\"Approved purchase for R16 match with 2 seats together.\",\"Stuck to total budget of $400 for this session.\"],\"typical_max_per_ticket\":200,\"summary\":\"Sofía R. approved a purchase for R16, maintaining her budget and preference for seats together.\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 387,
+        "completion_tokens": 62,
+        "latency_s": 2.35
+      },
+      "last_user_or_tool_msg": "Current memory:\n- Name: Sofía R.; home city: Dallas; languages: es/en\n- Favorite national teams: Mexico\n- Host cities within reach: Dallas, Houston\n- Budget habits: typically up to $200/ticket. Spends more for Mexico knockout matches, but sticks to the stated total budget.\n- Seat preferences: seats_"
+    }
+  }
+}

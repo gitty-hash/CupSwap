@@ -1,0 +1,196 @@
+{
+  "scenario": "smoke_nego_failure_v1",
+  "model": "gpt-4o-mini",
+  "mode": "live",
+  "recorded_at": "2026-11-10T16:24:06",
+  "inputs": {},
+  "calls": {
+    "platform_open:1": {
+      "response": {
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_4FmaDW2xzbPQdmjGbzIDFWbi",
+            "name": "verify_ticket",
+            "arguments": "{\"listing_id\":\"L19\"}"
+          }
+        ],
+        "finish_reason": "tool_calls"
+      },
+      "usage": {
+        "prompt_tokens": 611,
+        "completion_tokens": 16,
+        "latency_s": 2.58
+      },
+      "last_user_or_tool_msg": "Shared negotiation state:\n{\"negotiation_id\": \"N-F670BE\", \"listing\": {\"listing_id\": \"L19\", \"match_id\": \"R16-NYNJ\", \"match\": \"France vs Portugal\", \"stage\": \"Round of 16\", \"city\": \"New York New Jersey\", \"kickoff\": \"2026-07-05T19:00\", \"category\": \"Cat 1\", \"section\": \"C115\", \"row\": \"5\", \"quantity\": 2, \"s"
+    },
+    "platform_open:2": {
+      "response": {
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_gMyrFNXfewgKWBiWCpSdRSNV",
+            "name": "get_price_cap",
+            "arguments": "{\"listing_id\":\"L19\"}"
+          }
+        ],
+        "finish_reason": "tool_calls"
+      },
+      "usage": {
+        "prompt_tokens": 678,
+        "completion_tokens": 17,
+        "latency_s": 0.93
+      },
+      "last_user_or_tool_msg": "{\"listing_id\": \"L19\", \"verified\": true, \"registry_status\": \"valid\", \"reason\": \"Barcodes registered to the seller and not previously transferred.\", \"seller_id\": \"S06\"}"
+    },
+    "platform_open:3": {
+      "response": {
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_rBhdqaxcvAlIqUBV0cOUEfJ9",
+            "name": "publish_ruling",
+            "arguments": "{\"trading_allowed\":true,\"enforced_opening_price\":390,\"badges\":[],\"note\":\"Ticket verified and the asking price is within the resale cap.\"}"
+          }
+        ],
+        "finish_reason": "tool_calls"
+      },
+      "usage": {
+        "prompt_tokens": 754,
+        "completion_tokens": 44,
+        "latency_s": 1.18
+      },
+      "last_user_or_tool_msg": "{\"listing_id\": \"L19\", \"face_value\": 260, \"cap_multiplier\": 1.5, \"price_cap_per_ticket\": 390.0, \"asking_price\": 390, \"ask_exceeds_cap\": false}"
+    },
+    "buyer:r1": {
+      "response": {
+        "content": "{\"action\":\"offer\",\"price_per_ticket\":250,\"message\":\"I appreciate the rare pair listing, but I'm looking for a more budget-friendly option. Would you consider $250 per ticket?\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 730,
+        "completion_tokens": 39,
+        "latency_s": 1.31
+      },
+      "last_user_or_tool_msg": "SHARED NEGOTIATION STATE:\n{\"negotiation_id\": \"N-F670BE\", \"listing\": {\"listing_id\": \"L19\", \"match_id\": \"R16-NYNJ\", \"match\": \"France vs Portugal\", \"stage\": \"Round of 16\", \"city\": \"New York New Jersey\", \"kickoff\": \"2026-07-05T19:00\", \"category\": \"Cat 1\", \"section\": \"C115\", \"row\": \"5\", \"quantity\": 2, \"s"
+    },
+    "seller:r1": {
+      "response": {
+        "content": "{\"action\":\"counter\",\"price_per_ticket\":386,\"message\":\"Thanks for your offer! Given the rarity and demand for these tickets, I can go down to $386 per ticket.\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 870,
+        "completion_tokens": 38,
+        "latency_s": 1.17
+      },
+      "last_user_or_tool_msg": "SHARED NEGOTIATION STATE:\n{\"negotiation_id\": \"N-F670BE\", \"listing\": {\"listing_id\": \"L19\", \"match_id\": \"R16-NYNJ\", \"match\": \"France vs Portugal\", \"stage\": \"Round of 16\", \"city\": \"New York New Jersey\", \"kickoff\": \"2026-07-05T19:00\", \"category\": \"Cat 1\", \"section\": \"C115\", \"row\": \"5\", \"quantity\": 2, \"s"
+    },
+    "buyer:r2": {
+      "response": {
+        "content": "{\"action\":\"offer\",\"price_per_ticket\":275,\"message\":\"Thank you for your counter. I understand the rarity of these tickets, but my budget is limited. Would you consider $275 per ticket?\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 945,
+        "completion_tokens": 42,
+        "latency_s": 1.17
+      },
+      "last_user_or_tool_msg": "SHARED NEGOTIATION STATE:\n{\"negotiation_id\": \"N-F670BE\", \"listing\": {\"listing_id\": \"L19\", \"match_id\": \"R16-NYNJ\", \"match\": \"France vs Portugal\", \"stage\": \"Round of 16\", \"city\": \"New York New Jersey\", \"kickoff\": \"2026-07-05T19:00\", \"category\": \"Cat 1\", \"section\": \"C115\", \"row\": \"5\", \"quantity\": 2, \"s"
+    },
+    "seller:r2": {
+      "response": {
+        "content": "{\"action\":\"counter\",\"price_per_ticket\":381,\"message\":\"I appreciate your offer, but given the rarity and the upcoming marquee matchup, I can lower the price to $381 per ticket. Let's find a middle ground!\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 1090,
+        "completion_tokens": 46,
+        "latency_s": 1.28
+      },
+      "last_user_or_tool_msg": "SHARED NEGOTIATION STATE:\n{\"negotiation_id\": \"N-F670BE\", \"listing\": {\"listing_id\": \"L19\", \"match_id\": \"R16-NYNJ\", \"match\": \"France vs Portugal\", \"stage\": \"Round of 16\", \"city\": \"New York New Jersey\", \"kickoff\": \"2026-07-05T19:00\", \"category\": \"Cat 1\", \"section\": \"C115\", \"row\": \"5\", \"quantity\": 2, \"s"
+    },
+    "buyer:r3": {
+      "response": {
+        "content": "{\"action\":\"offer\",\"price_per_ticket\":280,\"message\":\"I appreciate your willingness to negotiate. Given my budget constraints, would you consider $280 per ticket?\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 1171,
+        "completion_tokens": 34,
+        "latency_s": 1.1
+      },
+      "last_user_or_tool_msg": "SHARED NEGOTIATION STATE:\n{\"negotiation_id\": \"N-F670BE\", \"listing\": {\"listing_id\": \"L19\", \"match_id\": \"R16-NYNJ\", \"match\": \"France vs Portugal\", \"stage\": \"Round of 16\", \"city\": \"New York New Jersey\", \"kickoff\": \"2026-07-05T19:00\", \"category\": \"Cat 1\", \"section\": \"C115\", \"row\": \"5\", \"quantity\": 2, \"s"
+    },
+    "seller:r3": {
+      "response": {
+        "content": "{\"action\":\"counter\",\"price_per_ticket\":375,\"message\":\"Thank you for your offer! I can meet you at $375 per ticket, which reflects the rarity and excitement of the upcoming France vs Portugal match.\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 1308,
+        "completion_tokens": 44,
+        "latency_s": 1.11
+      },
+      "last_user_or_tool_msg": "SHARED NEGOTIATION STATE:\n{\"negotiation_id\": \"N-F670BE\", \"listing\": {\"listing_id\": \"L19\", \"match_id\": \"R16-NYNJ\", \"match\": \"France vs Portugal\", \"stage\": \"Round of 16\", \"city\": \"New York New Jersey\", \"kickoff\": \"2026-07-05T19:00\", \"category\": \"Cat 1\", \"section\": \"C115\", \"row\": \"5\", \"quantity\": 2, \"s"
+    },
+    "buyer:r4": {
+      "response": {
+        "content": "{\"action\":\"offer\",\"price_per_ticket\":290,\"message\":\"Thank you for your counter. I understand the value of these tickets, but my budget is still a concern. Would you consider $290 per ticket?\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 1387,
+        "completion_tokens": 44,
+        "latency_s": 1.69
+      },
+      "last_user_or_tool_msg": "SHARED NEGOTIATION STATE:\n{\"negotiation_id\": \"N-F670BE\", \"listing\": {\"listing_id\": \"L19\", \"match_id\": \"R16-NYNJ\", \"match\": \"France vs Portugal\", \"stage\": \"Round of 16\", \"city\": \"New York New Jersey\", \"kickoff\": \"2026-07-05T19:00\", \"category\": \"Cat 1\", \"section\": \"C115\", \"row\": \"5\", \"quantity\": 2, \"s"
+    },
+    "seller:r4": {
+      "response": {
+        "content": "{\"action\":\"counter\",\"price_per_ticket\":368,\"message\":\"I appreciate your offer, but I can't go that low. How about we settle at $368 per ticket? This reflects the rarity and the excitement surrounding the France vs Portugal match!\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 1534,
+        "completion_tokens": 50,
+        "latency_s": 1.37
+      },
+      "last_user_or_tool_msg": "SHARED NEGOTIATION STATE:\n{\"negotiation_id\": \"N-F670BE\", \"listing\": {\"listing_id\": \"L19\", \"match_id\": \"R16-NYNJ\", \"match\": \"France vs Portugal\", \"stage\": \"Round of 16\", \"city\": \"New York New Jersey\", \"kickoff\": \"2026-07-05T19:00\", \"category\": \"Cat 1\", \"section\": \"C115\", \"row\": \"5\", \"quantity\": 2, \"s"
+    },
+    "buyer:r5": {
+      "response": {
+        "content": "{\"action\":\"offer\",\"price_per_ticket\":300,\"message\":\"I appreciate your flexibility, but my ceiling is $300 per ticket. Would you be willing to accept this offer?\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 1619,
+        "completion_tokens": 37,
+        "latency_s": 1.35
+      },
+      "last_user_or_tool_msg": "SHARED NEGOTIATION STATE:\n{\"negotiation_id\": \"N-F670BE\", \"listing\": {\"listing_id\": \"L19\", \"match_id\": \"R16-NYNJ\", \"match\": \"France vs Portugal\", \"stage\": \"Round of 16\", \"city\": \"New York New Jersey\", \"kickoff\": \"2026-07-05T19:00\", \"category\": \"Cat 1\", \"section\": \"C115\", \"row\": \"5\", \"quantity\": 2, \"s"
+    },
+    "seller:r5": {
+      "response": {
+        "content": "{\"action\":\"counter\",\"price_per_ticket\":361,\"message\":\"Thank you for your offer! I can meet you at $361 per ticket, which is a fair compromise considering the rarity and demand for these tickets.\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 1759,
+        "completion_tokens": 44,
+        "latency_s": 1.08
+      },
+      "last_user_or_tool_msg": "SHARED NEGOTIATION STATE:\n{\"negotiation_id\": \"N-F670BE\", \"listing\": {\"listing_id\": \"L19\", \"match_id\": \"R16-NYNJ\", \"match\": \"France vs Portugal\", \"stage\": \"Round of 16\", \"city\": \"New York New Jersey\", \"kickoff\": \"2026-07-05T19:00\", \"category\": \"Cat 1\", \"section\": \"C115\", \"row\": \"5\", \"quantity\": 2, \"s"
+    }
+  }
+}

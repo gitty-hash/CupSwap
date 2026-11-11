@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.env
+*.tmp
+.pytest_cache/
+# runtime state is regenerated from data/ on first launch (keep it out of the submission zip)
+state/

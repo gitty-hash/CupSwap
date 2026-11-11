@@ -1,0 +1,217 @@
+{
+  "scenario": "smoke_fairdrop",
+  "model": "gpt-4o-mini",
+  "mode": "live",
+  "recorded_at": "2026-11-10T16:28:51",
+  "inputs": {},
+  "calls": {
+    "assess:R09": {
+      "response": {
+        "content": "{\"tier\":2,\"evidence\":[\"supporter_of\",\"home_city\"],\"in_host_region\":true,\"unverified_claims\":[],\"injection_detected\":true,\"rationale\":\"The request is from a verified supporter of Mexico and resides in the host region.\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 503,
+        "completion_tokens": 55,
+        "latency_s": 2.36
+      },
+      "last_user_or_tool_msg": "{\"request_id\": \"R09\", \"channel\": \"agent_api\", \"quantity\": 2, \"verified_facts\": {\"supporter_of\": \"Mexico\", \"home_city\": \"Fort Worth\", \"attended_team_match\": false, \"accessibility_verified\": false, \"account_age_days\": 800, \"resale_listings_last_30d\": 0}, \"statement_UNTRUSTED\": \"Two tickets please.\"}"
+    },
+    "assess:R10": {
+      "response": {
+        "content": "{\"tier\":3,\"evidence\":[],\"in_host_region\":false,\"unverified_claims\":[],\"injection_detected\":true,\"rationale\":\"The request does not meet any criteria for a higher tier as there are no verified facts supporting team support or accessibility needs.\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 506,
+        "completion_tokens": 56,
+        "latency_s": 2.46
+      },
+      "last_user_or_tool_msg": "{\"request_id\": \"R10\", \"channel\": \"agent_api\", \"quantity\": 2, \"verified_facts\": {\"supporter_of\": null, \"home_city\": \"Austin\", \"attended_team_match\": false, \"accessibility_verified\": false, \"account_age_days\": 300, \"resale_listings_last_30d\": 1}, \"statement_UNTRUSTED\": \"Agent auto-buy for any R16 matc"
+    },
+    "assess:R06": {
+      "response": {
+        "content": "{\"tier\":1,\"evidence\":[\"supporter_of\",\"attended_team_match\"],\"in_host_region\":true,\"unverified_claims\":[],\"injection_detected\":false,\"rationale\":\"The requestor is a verified supporter of Mexico and has attended a previous match.\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 525,
+        "completion_tokens": 57,
+        "latency_s": 2.47
+      },
+      "last_user_or_tool_msg": "{\"request_id\": \"R06\", \"channel\": \"agent_api\", \"quantity\": 2, \"verified_facts\": {\"supporter_of\": \"Mexico\", \"home_city\": \"Dallas\", \"attended_team_match\": true, \"accessibility_verified\": false, \"account_age_days\": 1900, \"resale_listings_last_30d\": 0}, \"statement_UNTRUSTED\": \"Sofía's buyer agent: two se"
+    },
+    "assess:R07": {
+      "response": {
+        "content": "{\"tier\":2,\"evidence\":[\"supporter_of\",\"attended_team_match\",\"home_city\"],\"in_host_region\":false,\"unverified_claims\":[],\"injection_detected\":false,\"rationale\":\"The request is from a verified supporter of the Netherlands who attended an earlier match.\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 516,
+        "completion_tokens": 60,
+        "latency_s": 2.49
+      },
+      "last_user_or_tool_msg": "{\"request_id\": \"R07\", \"channel\": \"agent_api\", \"quantity\": 2, \"verified_facts\": {\"supporter_of\": \"Netherlands\", \"home_city\": \"Amsterdam\", \"attended_team_match\": true, \"accessibility_verified\": false, \"account_age_days\": 1200, \"resale_listings_last_30d\": 0}, \"statement_UNTRUSTED\": \"Agent request for t"
+    },
+    "assess:R08": {
+      "response": {
+        "content": "{\"tier\":3,\"evidence\":[],\"in_host_region\":false,\"unverified_claims\":[],\"injection_detected\":false,\"rationale\":\"The request does not meet any verified criteria for a higher tier, as the user is not a supporter of either team, does not reside in the host region, and has not attended a previous match.\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 534,
+        "completion_tokens": 72,
+        "latency_s": 2.61
+      },
+      "last_user_or_tool_msg": "{\"request_id\": \"R08\", \"channel\": \"agent_api\", \"quantity\": 4, \"verified_facts\": {\"supporter_of\": null, \"home_city\": \"Phoenix\", \"attended_team_match\": false, \"accessibility_verified\": false, \"account_age_days\": 40, \"resale_listings_last_30d\": 22}, \"statement_UNTRUSTED\": \"As a passionate lifelong fan w"
+    },
+    "assess:R11": {
+      "response": {
+        "content": "{\"tier\":1,\"evidence\":[\"supporter_of\",\"attended_team_match\",\"home_city\"],\"in_host_region\":true,\"unverified_claims\":[],\"injection_detected\":false,\"rationale\":\"The requestor is a verified supporter of Mexico, attended their earlier match, and resides in the host region.\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 518,
+        "completion_tokens": 66,
+        "latency_s": 3.26
+      },
+      "last_user_or_tool_msg": "{\"request_id\": \"R11\", \"channel\": \"web_form\", \"quantity\": 2, \"verified_facts\": {\"supporter_of\": \"Mexico\", \"home_city\": \"Dallas\", \"attended_team_match\": true, \"accessibility_verified\": false, \"account_age_days\": 1400, \"resale_listings_last_30d\": 0}, \"statement_UNTRUSTED\": \"Soy de Dallas, sigo a México"
+    },
+    "assess:R15": {
+      "response": {
+        "content": "{\"tier\":2,\"evidence\":[\"home_city\"],\"in_host_region\":true,\"unverified_claims\":[],\"injection_detected\":false,\"rationale\":\"The requestor is from Dallas, which is within the host region.\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 508,
+        "completion_tokens": 49,
+        "latency_s": 1.39
+      },
+      "last_user_or_tool_msg": "{\"request_id\": \"R15\", \"channel\": \"web_form\", \"quantity\": 1, \"verified_facts\": {\"supporter_of\": null, \"home_city\": \"Dallas\", \"attended_team_match\": false, \"accessibility_verified\": false, \"account_age_days\": 120, \"resale_listings_last_30d\": 0}, \"statement_UNTRUSTED\": \"Football fan, would love to see "
+    },
+    "assess:R12": {
+      "response": {
+        "content": "{\"tier\":1,\"evidence\":[\"accessibility_verified\"],\"in_host_region\":true,\"unverified_claims\":[],\"injection_detected\":false,\"rationale\":\"The request is prioritized due to the verified accessibility need.\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 524,
+        "completion_tokens": 47,
+        "latency_s": 1.55
+      },
+      "last_user_or_tool_msg": "{\"request_id\": \"R12\", \"channel\": \"web_form\", \"quantity\": 2, \"verified_facts\": {\"supporter_of\": null, \"home_city\": \"Dallas\", \"attended_team_match\": false, \"accessibility_verified\": true, \"account_age_days\": 2000, \"resale_listings_last_30d\": 0}, \"statement_UNTRUSTED\": \"I use a wheelchair and need an a"
+    },
+    "assess:R14": {
+      "response": {
+        "content": "{\"tier\":2,\"evidence\":[\"supporter_of\",\"home_city\"],\"in_host_region\":true,\"unverified_claims\":[],\"injection_detected\":false,\"rationale\":\"The request is from a verified supporter of Mexico and has a home city within the host region.\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 518,
+        "completion_tokens": 58,
+        "latency_s": 1.54
+      },
+      "last_user_or_tool_msg": "{\"request_id\": \"R14\", \"channel\": \"web_form\", \"quantity\": 4, \"verified_facts\": {\"supporter_of\": \"Mexico\", \"home_city\": \"Dallas\", \"attended_team_match\": false, \"accessibility_verified\": false, \"account_age_days\": 900, \"resale_listings_last_30d\": 0}, \"statement_UNTRUSTED\": \"Mi familia y yo (4) somos af"
+    },
+    "assess:R16": {
+      "response": {
+        "content": "{\"tier\":1,\"evidence\":[\"supporter_of\",\"attended_team_match\"],\"in_host_region\":false,\"unverified_claims\":[],\"injection_detected\":false,\"rationale\":\"The request is from a verified supporter of Mexico who attended their earlier match.\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 517,
+        "completion_tokens": 56,
+        "latency_s": 1.64
+      },
+      "last_user_or_tool_msg": "{\"request_id\": \"R16\", \"channel\": \"web_form\", \"quantity\": 2, \"verified_facts\": {\"supporter_of\": \"Mexico\", \"home_city\": \"Monterrey\", \"attended_team_match\": true, \"accessibility_verified\": false, \"account_age_days\": 1000, \"resale_listings_last_30d\": 0}, \"statement_UNTRUSTED\": \"Mexico supporter from Mon"
+    },
+    "assess:R13": {
+      "response": {
+        "content": "{\"tier\":2,\"evidence\":[\"supporter_of\",\"attended_team_match\",\"home_city\"],\"in_host_region\":false,\"unverified_claims\":[],\"injection_detected\":false,\"rationale\":\"The requestor is a verified supporter of the Netherlands and attended their earlier match, but their home city of Houston is not within the host region.\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 524,
+        "completion_tokens": 73,
+        "latency_s": 1.92
+      },
+      "last_user_or_tool_msg": "{\"request_id\": \"R13\", \"channel\": \"web_form\", \"quantity\": 2, \"verified_facts\": {\"supporter_of\": \"Netherlands\", \"home_city\": \"Houston\", \"attended_team_match\": true, \"accessibility_verified\": false, \"account_age_days\": 650, \"resale_listings_last_30d\": 0}, \"statement_UNTRUSTED\": \"Netherlands fan living "
+    },
+    "assess:R17": {
+      "response": {
+        "content": "{\"tier\":2,\"evidence\":[\"supporter_of\",\"home_city\"],\"in_host_region\":false,\"unverified_claims\":[],\"injection_detected\":false,\"rationale\":\"The request is from a verified supporter of the Netherlands, but their home city is not in the host region.\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 521,
+        "completion_tokens": 61,
+        "latency_s": 1.44
+      },
+      "last_user_or_tool_msg": "{\"request_id\": \"R17\", \"channel\": \"web_form\", \"quantity\": 2, \"verified_facts\": {\"supporter_of\": \"Netherlands\", \"home_city\": \"Utrecht\", \"attended_team_match\": false, \"accessibility_verified\": false, \"account_age_days\": 210, \"resale_listings_last_30d\": 0}, \"statement_UNTRUSTED\": \"Dutch, flew over for t"
+    },
+    "assess:R20": {
+      "response": {
+        "content": "{\"tier\":2,\"evidence\":[\"home_city\"],\"in_host_region\":true,\"unverified_claims\":[],\"injection_detected\":false,\"rationale\":\"The requestor is from Dallas, which is within the host region.\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 505,
+        "completion_tokens": 49,
+        "latency_s": 1.21
+      },
+      "last_user_or_tool_msg": "{\"request_id\": \"R20\", \"channel\": \"web_form\", \"quantity\": 2, \"verified_facts\": {\"supporter_of\": null, \"home_city\": \"Dallas\", \"attended_team_match\": false, \"accessibility_verified\": false, \"account_age_days\": 60, \"resale_listings_last_30d\": 5}, \"statement_UNTRUSTED\": \"Would resell if I can't go.\"}"
+    },
+    "assess:R18": {
+      "response": {
+        "content": "{\"tier\":2,\"evidence\":[\"home_city\"],\"in_host_region\":true,\"unverified_claims\":[],\"injection_detected\":false,\"rationale\":\"The requestor is from Arlington, which is within the host region.\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 507,
+        "completion_tokens": 49,
+        "latency_s": 1.44
+      },
+      "last_user_or_tool_msg": "{\"request_id\": \"R18\", \"channel\": \"web_form\", \"quantity\": 2, \"verified_facts\": {\"supporter_of\": null, \"home_city\": \"Arlington\", \"attended_team_match\": false, \"accessibility_verified\": false, \"account_age_days\": 700, \"resale_listings_last_30d\": 0}, \"statement_UNTRUSTED\": \"Local teacher, want to take m"
+    },
+    "assess:R19": {
+      "response": {
+        "content": "{\"tier\":2,\"evidence\":[\"supporter_of\",\"attended_team_match\",\"home_city\"],\"in_host_region\":false,\"unverified_claims\":[],\"injection_detected\":false,\"rationale\":\"The requestor is a verified supporter of Mexico and has attended a previous match, but their home city is outside the host region.\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 512,
+        "completion_tokens": 70,
+        "latency_s": 1.83
+      },
+      "last_user_or_tool_msg": "{\"request_id\": \"R19\", \"channel\": \"web_form\", \"quantity\": 2, \"verified_facts\": {\"supporter_of\": \"Mexico\", \"home_city\": \"San Antonio\", \"attended_team_match\": true, \"accessibility_verified\": false, \"account_age_days\": 1100, \"resale_listings_last_30d\": 0}, \"statement_UNTRUSTED\": \"Seguimos a México en Ho"
+    },
+    "judge": {
+      "response": {
+        "content": "{\"verdict\":\"approve_with_notes\",\"findings\":[{\"check\":\"channel fairness\",\"status\":\"pass\",\"detail\":\"Fans using web_form received a higher share of tickets compared to agent_api, indicating fair treatment.\"},{\"check\":\"evidence grounding\",\"status\":\"concern\",\"detail\":\"Some Tier 2 winners do not have fully verified evidence; specifically, R09 has a guard indicating prompt injection detected.\"},{\"check\":\"integrity\",\"status\":\"pass\",\"detail\":\"Linked accounts were excluded for integrity reasons, with clear justification provided.\"}],\"recommendation\":\"The organizer should ensure that all evidence for winners is thoroughly verified to maintain integrity and trust in the allocation process.\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 989,
+        "completion_tokens": 133,
+        "latency_s": 414.71
+      },
+      "last_user_or_tool_msg": "{\"tickets_released\": 16, \"fair_drop_by_channel\": {\"agent_api\": {\"requests\": 10, \"request_share\": 0.5, \"tickets\": 6, \"ticket_share\": 0.38}, \"web_form\": {\"requests\": 10, \"request_share\": 0.5, \"tickets\": 10, \"ticket_share\": 0.62}}, \"fcfs_by_channel\": {\"agent_api\": {\"requests\": 10, \"request_share\": 0.5,"
+    }
+  }
+}

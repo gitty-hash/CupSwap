@@ -1,0 +1,43 @@
+{
+  "fan_id": "julien",
+  "display_name": "Julien M.",
+  "home_city": "New York",
+  "language": "fr/en",
+  "favorite_teams": [
+    "France"
+  ],
+  "cities_within_reach": [
+    "New York New Jersey",
+    "Philadelphia",
+    "Boston"
+  ],
+  "budget_habits": {
+    "typical_max_per_ticket": 210,
+    "notes": "Price-sensitive; will skip a match rather than overpay."
+  },
+  "seat_preferences": {
+    "seats_together": "essential (goes with his partner)",
+    "preferred_area": "aisle seat, France supporters' end",
+    "avoid": "obstructed view"
+  },
+  "seller_rules": {
+    "min_seller_rating": 4.5,
+    "avoid_sellers": [
+      "S08"
+    ]
+  },
+  "past_purchases": [
+    {
+      "match_id": "R32-NYNJ",
+      "city": "New York New Jersey",
+      "tickets": 2,
+      "price_per_ticket": 150,
+      "seller_id": "S08",
+      "outcome": "tickets arrived 20 minutes before kickoff; filed complaint"
+    }
+  ],
+  "agent_notes": [
+    "Never use seller S08 again (near-miss late transfer at the Round of 32)."
+  ],
+  "last_updated": "2026-06-30"
+}

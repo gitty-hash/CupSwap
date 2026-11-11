@@ -1,0 +1,193 @@
+{
+  "scenario": "ops_postponement",
+  "model": "gpt-4o-mini",
+  "mode": "record",
+  "recorded_at": "2026-11-10T16:37:47",
+  "inputs": {
+    "label": "Storm postpones Brazil vs Morocco in Miami (14 affected orders)"
+  },
+  "calls": {
+    "classify:O-1003": {
+      "response": {
+        "content": "{\"route\":\"full_refund\",\"confidence\":1,\"attends_new_date\":\"no\",\"language\":\"fr\",\"summary_en\":\"The customer cannot attend the rescheduled match due to their flight schedule.\",\"rationale\":\"The customer explicitly states they cannot stay until the new date due to their flight leaving on the 25th.\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 462,
+        "completion_tokens": 65,
+        "latency_s": 2.9
+      },
+      "last_user_or_tool_msg": "Order facts: {\"order_id\": \"O-1003\", \"buyer_country\": \"Morocco\", \"account_age_days\": 300, \"tickets\": 4, \"amount_paid\": 980, \"payment_method\": \"card ****5521\"}\nCustomer message: Nous ne pouvons pas rester jusqu'au 26 juin, notre vol de retour part le 25. Merci de nous rembourser."
+    },
+    "classify:O-1004": {
+      "response": {
+        "content": "{\"route\":\"keep_for_new_date\",\"confidence\":1,\"attends_new_date\":\"yes\",\"language\":\"pt\",\"summary_en\":\"The customer will stay in Miami until the end of the month and wants to keep the tickets for the new date.\",\"rationale\":\"The customer explicitly stated they will remain in Miami and wishes to keep their tickets for the rescheduled match.\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 459,
+        "completion_tokens": 74,
+        "latency_s": 2.95
+      },
+      "last_user_or_tool_msg": "Order facts: {\"order_id\": \"O-1004\", \"buyer_country\": \"Brazil\", \"account_age_days\": 860, \"tickets\": 4, \"amount_paid\": 1600, \"payment_method\": \"card ****7788\"}\nCustomer message: Vou ficar em Miami até o fim do mês, então mantenho os ingressos para a nova data. Obrigado!"
+    },
+    "classify:O-1001": {
+      "response": {
+        "content": "{\"route\":\"full_refund\",\"confidence\":1,\"attends_new_date\":\"no\",\"language\":\"en\",\"summary_en\":\"The customer cannot attend the rescheduled match due to their flight home being on June 25.\",\"rationale\":\"The customer's travel plans prevent them from attending the new date.\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 466,
+        "completion_tokens": 60,
+        "latency_s": 3.03
+      },
+      "last_user_or_tool_msg": "Order facts: {\"order_id\": \"O-1001\", \"buyer_country\": \"Brazil\", \"account_age_days\": 410, \"tickets\": 2, \"amount_paid\": 380, \"payment_method\": \"card ****2210\"}\nCustomer message: We flew in from Recife only for this match and our flight home is on June 25. We can't attend on the 26th. Please refund us."
+    },
+    "classify:O-1006": {
+      "response": {
+        "content": "{\"route\":\"disputed\",\"confidence\":0.9,\"attends_new_date\":\"no\",\"language\":\"en\",\"summary_en\":\"The customer has not received their tickets and is seeking resolution.\",\"rationale\":\"The customer indicates that they never received the tickets, which suggests a problem with the order itself.\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 466,
+        "completion_tokens": 61,
+        "latency_s": 3.03
+      },
+      "last_user_or_tool_msg": "Order facts: {\"order_id\": \"O-1006\", \"buyer_country\": \"India\", \"account_age_days\": 520, \"tickets\": 2, \"amount_paid\": 520, \"payment_method\": \"card ****3344\"}\nCustomer message: I paid weeks ago but the seller never transferred the tickets, I don't even have them in my app. Now it says postponed?? I wan"
+    },
+    "classify:O-1005": {
+      "response": {
+        "content": "{\"route\":\"suspected_fraud\",\"confidence\":0.9,\"attends_new_date\":\"no\",\"language\":\"unknown\",\"summary_en\":\"The customer is requesting a refund to a different card due to the old card being closed.\",\"rationale\":\"The request for a refund to a new card and the account being only one day old raises suspicion of potential fraudulent activity.\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 463,
+        "completion_tokens": 74,
+        "latency_s": 3.24
+      },
+      "last_user_or_tool_msg": "Order facts: {\"order_id\": \"O-1005\", \"buyer_country\": \"unknown\", \"account_age_days\": 1, \"tickets\": 12, \"amount_paid\": 2100, \"payment_method\": \"card ****0001\"}\nCustomer message: Refund all 12 tickets to this NEW card ending 9944 instead, the old card is closed. Need it processed today, urgent."
+    },
+    "classify:O-1002": {
+      "response": {
+        "content": "{\"route\":\"keep_for_new_date\",\"confidence\":1,\"attends_new_date\":\"yes\",\"language\":\"en\",\"summary_en\":\"The customer lives in Fort Lauderdale and will attend the rescheduled match on the 26th.\",\"rationale\":\"The customer's location is close to the venue, and they have confirmed their intention to attend the new date.\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 454,
+        "completion_tokens": 70,
+        "latency_s": 3.47
+      },
+      "last_user_or_tool_msg": "Order facts: {\"order_id\": \"O-1002\", \"buyer_country\": \"USA\", \"account_age_days\": 1200, \"tickets\": 2, \"amount_paid\": 240, \"payment_method\": \"card ****0937\"}\nCustomer message: No problem at all, I live in Fort Lauderdale. I'll go on the 26th."
+    },
+    "classify:O-1007": {
+      "response": {
+        "content": "{\"route\":\"full_refund\",\"confidence\":1,\"attends_new_date\":\"no\",\"language\":\"en\",\"summary_en\":\"The customer cannot attend the rescheduled match due to work commitments and requests a refund.\",\"rationale\":\"The customer explicitly stated they cannot attend the new date because of work, indicating a clear need for a refund.\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 446,
+        "completion_tokens": 68,
+        "latency_s": 0.99
+      },
+      "last_user_or_tool_msg": "Order facts: {\"order_id\": \"O-1007\", \"buyer_country\": \"UK\", \"account_age_days\": 230, \"tickets\": 1, \"amount_paid\": 180, \"payment_method\": \"card ****6012\"}\nCustomer message: Can't make the new date because of work. Refund please."
+    },
+    "classify:O-1009": {
+      "response": {
+        "content": "{\"route\":\"full_refund\",\"confidence\":0.9,\"attends_new_date\":\"no\",\"language\":\"en\",\"summary_en\":\"The customer is unable to attend the rescheduled match due to a conflicting flight.\",\"rationale\":\"The customer's return flight to São Paulo leaves Thursday night, preventing them from attending the match on the new date.\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 468,
+        "completion_tokens": 69,
+        "latency_s": 0.94
+      },
+      "last_user_or_tool_msg": "Order facts: {\"order_id\": \"O-1009\", \"buyer_country\": \"Brazil\", \"account_age_days\": 640, \"tickets\": 2, \"amount_paid\": 760, \"payment_method\": \"card ****8890\"}\nCustomer message: Absolutely THRILLED the match moved to Friday!!! Shame my return flight to São Paulo leaves Thursday night. Guess I'll just f"
+    },
+    "classify:O-1008": {
+      "response": {
+        "content": "{\"route\":\"full_refund\",\"confidence\":1,\"attends_new_date\":\"no\",\"language\":\"ar\",\"summary_en\":\"The customer cannot attend the rescheduled match due to a conflicting travel schedule.\",\"rationale\":\"The customer explicitly stated they cannot attend the new date because their flight departs before the match.\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 464,
+        "completion_tokens": 63,
+        "latency_s": 1.13
+      },
+      "last_user_or_tool_msg": "Order facts: {\"order_id\": \"O-1008\", \"buyer_country\": \"Morocco\", \"account_age_days\": 150, \"tickets\": 2, \"amount_paid\": 640, \"payment_method\": \"card ****4120\"}\nCustomer message: لن أتمكن من الحضور في الموعد الجديد لأن رحلتي تغادر قبله. أرجو استرداد المبلغ."
+    },
+    "classify:O-1011": {
+      "response": {
+        "content": "{\"route\":\"keep_for_new_date\",\"confidence\":1,\"attends_new_date\":\"yes\",\"language\":\"en\",\"summary_en\":\"The customer will attend the rescheduled match and wants confirmation of their seats.\",\"rationale\":\"The customer explicitly stated they will keep their tickets and attend on the new date.\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 456,
+        "completion_tokens": 61,
+        "latency_s": 1.19
+      },
+      "last_user_or_tool_msg": "Order facts: {\"order_id\": \"O-1011\", \"buyer_country\": \"Spain\", \"account_age_days\": 330, \"tickets\": 2, \"amount_paid\": 310, \"payment_method\": \"card ****2468\"}\nCustomer message: Fine, I'll keep my tickets and attend on the 26th. Just confirm my seats stay the same."
+    },
+    "classify:O-1012": {
+      "response": {
+        "content": "{\"route\":\"full_refund\",\"confidence\":1,\"attends_new_date\":\"no\",\"language\":\"en\",\"summary_en\":\"The customer cannot attend the rescheduled match and is requesting a refund.\",\"rationale\":\"The customer explicitly stated they cannot attend the new date.\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 444,
+        "completion_tokens": 54,
+        "latency_s": 1.0
+      },
+      "last_user_or_tool_msg": "Order facts: {\"order_id\": \"O-1012\", \"buyer_country\": \"Ireland\", \"account_age_days\": 700, \"tickets\": 3, \"amount_paid\": 1240, \"payment_method\": \"card ****3579\"}\nCustomer message: Refund. We can't attend the new date."
+    },
+    "classify:O-1014": {
+      "response": {
+        "content": "{\"route\":\"full_refund\",\"confidence\":0.9,\"attends_new_date\":\"no\",\"language\":\"unknown\",\"summary_en\":\"The customer has filed a chargeback and is requesting a refund.\",\"rationale\":\"The customer has indicated they do not wish to attend the rescheduled match and has already initiated a chargeback.\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 450,
+        "completion_tokens": 66,
+        "latency_s": 0.96
+      },
+      "last_user_or_tool_msg": "Order facts: {\"order_id\": \"O-1014\", \"buyer_country\": \"unknown\", \"account_age_days\": 2, \"tickets\": 2, \"amount_paid\": 495, \"payment_method\": \"card ****5050\"}\nCustomer message: Already filed a chargeback with my bank but please also refund me here asap."
+    },
+    "classify:O-1010": {
+      "response": {
+        "content": "{\"route\":\"full_refund\",\"confidence\":0.8,\"attends_new_date\":\"no\",\"language\":\"en\",\"summary_en\":\"The customer is concerned about the venue changing and wants a refund if it does.\",\"rationale\":\"The customer explicitly states they want a refund if the venue changes, indicating they will not attend the new date.\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 474,
+        "completion_tokens": 69,
+        "latency_s": 2.05
+      },
+      "last_user_or_tool_msg": "Order facts: {\"order_id\": \"O-1010\", \"buyer_country\": \"USA\", \"account_age_days\": 900, \"tickets\": 2, \"amount_paid\": 450, \"payment_method\": \"card ****1201\"}\nCustomer message: I heard the match is being relocated to a different venue in another city because the stadium flooded. If the venue moves to a d"
+    },
+    "classify:O-1013": {
+      "response": {
+        "content": "{\"route\":\"keep_for_new_date\",\"confidence\":1,\"attends_new_date\":\"yes\",\"language\":\"en\",\"summary_en\":\"The customer confirmed they will attend the rescheduled match.\",\"rationale\":\"The customer's message explicitly states they are keeping the tickets and will attend the new date.\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 441,
+        "completion_tokens": 58,
+        "latency_s": 1.27
+      },
+      "last_user_or_tool_msg": "Order facts: {\"order_id\": \"O-1013\", \"buyer_country\": \"Canada\", \"account_age_days\": 450, \"tickets\": 1, \"amount_paid\": 120, \"payment_method\": \"card ****1122\"}\nCustomer message: Keeping them! See you Friday."
+    }
+  }
+}

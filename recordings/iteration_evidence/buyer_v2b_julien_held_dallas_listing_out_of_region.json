@@ -1,0 +1,187 @@
+{
+  "scenario": "smoke_buyer_julien",
+  "model": "gpt-4o-mini",
+  "mode": "live",
+  "recorded_at": "2026-11-10T16:19:56",
+  "inputs": {},
+  "calls": {
+    "plan:v1": {
+      "response": {
+        "content": "{\"goal_summary\":\"Find two tickets together for a Round-of-16 match under $400 total.\",\"constraints\":{\"quantity\":2,\"max_total_budget\":400,\"city\":null,\"stage\":\"R16\",\"seats_together\":true},\"steps\":[{\"step\":1,\"action\":\"Search for active listings for Round-of-16 matches.\",\"tool\":\"search_listings\",\"why\":\"To find available tickets that meet the criteria.\"},{\"step\":2,\"action\":\"Check seller ratings for the listings found.\",\"tool\":\"get_seller_rating\",\"why\":\"To ensure the sellers have a minimum rating of 4.5 and avoid seller S08.\"},{\"step\":3,\"action\":\"Filter listings to ensure tickets are together and within budget.\",\"tool\":\"search_listings\",\"why\":\"To narrow down options to those that specifically meet the seating and budget requirements.\"},{\"step\":4,\"action\":\"Place a hold on a suitable listing if found.\",\"tool\":\"place_hold\",\"why\":\"To secure the tickets while I finalize the decision.\"},{\"step\":5,\"action\":\"Submit a recommendation based on the best options found.\",\"tool\":\"submit_recommendation\",\"why\":\"To conclude the session with the best available tickets.\"}],\"memory_applied\":[],\"assumptions\":[\"There are available listings for Round-of-16 matches within the budget.\",\"The listings will have sellers with acceptable ratings.\"]}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 742,
+        "completion_tokens": 275,
+        "latency_s": 5.0
+      },
+      "last_user_or_tool_msg": "Fan request: Get me two tickets together for a Round-of-16 match, under $400 total."
+    },
+    "react:1": {
+      "response": {
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_LJpIfVoTKCr7g4U7MFxZcBgS",
+            "name": "search_listings",
+            "arguments": "{\"thought\":\"I am starting by searching for active listings for Round-of-16 matches to find potential options for Julien.\",\"match_id\":null,\"city\":null,\"stage\":\"R16\",\"team\":null,\"max_price_per_ticket\":200,\"min_quantity\":2,\"adjacent_only\":null}"
+          }
+        ],
+        "finish_reason": "tool_calls"
+      },
+      "usage": {
+        "prompt_tokens": 1201,
+        "completion_tokens": 70,
+        "latency_s": 1.91
+      },
+      "last_user_or_tool_msg": "Request: Get me two tickets together for a Round-of-16 match, under $400 total.\n\nApproved plan:\n1. Search for active listings for Round-of-16 matches. [search_listings]\n2. Check seller ratings for the listings found. [get_seller_rating]\n3. Filter listings to ensure tickets are together and within bu"
+    },
+    "react:2": {
+      "response": {
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_jA9UdIp8RvR34CijqmCb9OtA",
+            "name": "get_seller_rating",
+            "arguments": "{\"thought\":\"I need to check the seller ratings for the listings found to ensure they meet Julien's standards.\",\"seller_id\":\"S09\"}"
+          }
+        ],
+        "finish_reason": "tool_calls"
+      },
+      "usage": {
+        "prompt_tokens": 2394,
+        "completion_tokens": 39,
+        "latency_s": 1.3
+      },
+      "last_user_or_tool_msg": "{\"count\": 8, \"results\": [{\"listing_id\": \"L09\", \"match_id\": \"R16-DAL\", \"match\": \"Mexico vs Netherlands\", \"stage\": \"Round of 16\", \"city\": \"Dallas\", \"kickoff\": \"2026-07-04T20:00\", \"category\": \"Cat 3\", \"section\": \"C330\", \"row\": \"30\", \"quantity\": 2, \"seats_adjacent\": true, \"seat_note\": \"\", \"price_per_tic"
+    },
+    "react:3": {
+      "response": {
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_OVotit1Tc4Ug08xMXARIdoN7",
+            "name": "get_seller_rating",
+            "arguments": "{\"thought\":\"I will check the seller rating for the next listing to find a reliable option for Julien.\",\"seller_id\":\"S04\"}"
+          }
+        ],
+        "finish_reason": "tool_calls"
+      },
+      "usage": {
+        "prompt_tokens": 2513,
+        "completion_tokens": 38,
+        "latency_s": 1.8
+      },
+      "last_user_or_tool_msg": "{\"seller_id\": \"S09\", \"display_name\": \"QuickTix_2026\", \"rating\": 2.3, \"completed_sales\": 3, \"on_time_transfer_rate\": 0.5, \"account_age_days\": 3, \"open_disputes\": 2, \"home_city\": \"unknown\"}"
+    },
+    "react:4": {
+      "response": {
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_dAJSyp20RAcPtdLF97bK5EWI",
+            "name": "get_seller_rating",
+            "arguments": "{\"thought\":\"Next, I will check the seller rating for the third listing to evaluate its reliability.\",\"seller_id\":\"S03\"}"
+          }
+        ],
+        "finish_reason": "tool_calls"
+      },
+      "usage": {
+        "prompt_tokens": 2628,
+        "completion_tokens": 37,
+        "latency_s": 1.26
+      },
+      "last_user_or_tool_msg": "{\"seller_id\": \"S04\", \"display_name\": \"BracketBuster\", \"rating\": 4.2, \"completed_sales\": 40, \"on_time_transfer_rate\": 0.93, \"account_age_days\": 400, \"open_disputes\": 1, \"home_city\": \"Houston\"}"
+    },
+    "react:5": {
+      "response": {
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_atSfmmnmeodMH6PfVTrAcvTF",
+            "name": "get_seller_rating",
+            "arguments": "{\"thought\":\"I need to check the seller rating for the fourth listing to ensure it meets Julien's standards.\",\"seller_id\":\"S08\"}"
+          }
+        ],
+        "finish_reason": "tool_calls"
+      },
+      "usage": {
+        "prompt_tokens": 2744,
+        "completion_tokens": 39,
+        "latency_s": 1.94
+      },
+      "last_user_or_tool_msg": "{\"seller_id\": \"S03\", \"display_name\": \"AztecaTickets\", \"rating\": 4.9, \"completed_sales\": 134, \"on_time_transfer_rate\": 0.99, \"account_age_days\": 2190, \"open_disputes\": 0, \"home_city\": \"Dallas\"}"
+    },
+    "react:6": {
+      "response": {
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_7AQ1ob4aBjY2eMLrhs6m4EM0",
+            "name": "get_seller_rating",
+            "arguments": "{\"thought\":\"I will check the seller rating for the fifth listing to evaluate its reliability.\",\"seller_id\":\"S06\"}"
+          }
+        ],
+        "finish_reason": "tool_calls"
+      },
+      "usage": {
+        "prompt_tokens": 2861,
+        "completion_tokens": 35,
+        "latency_s": 1.32
+      },
+      "last_user_or_tool_msg": "{\"seller_id\": \"S08\", \"display_name\": \"HudsonFlip\", \"rating\": 3.1, \"completed_sales\": 9, \"on_time_transfer_rate\": 0.71, \"account_age_days\": 95, \"open_disputes\": 2, \"home_city\": \"Newark\"}"
+    },
+    "react:7": {
+      "response": {
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_5axQkxALrAw8VEyT2yTkQEJ6",
+            "name": "get_seller_rating",
+            "arguments": "{\"thought\":\"I need to check the seller rating for the sixth listing to ensure it meets Julien's standards.\",\"seller_id\":\"S07\"}"
+          }
+        ],
+        "finish_reason": "tool_calls"
+      },
+      "usage": {
+        "prompt_tokens": 2975,
+        "completion_tokens": 39,
+        "latency_s": 1.23
+      },
+      "last_user_or_tool_msg": "{\"seller_id\": \"S06\", \"display_name\": \"LesBleusResale\", \"rating\": 4.8, \"completed_sales\": 63, \"on_time_transfer_rate\": 0.99, \"account_age_days\": 980, \"open_disputes\": 0, \"home_city\": \"Paris\"}"
+    },
+    "react:8": {
+      "response": {
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_fFSh4u409Tbj2QCsvF4aTA96",
+            "name": "place_hold",
+            "arguments": "{\"thought\":\"I found a suitable listing with reliable seller ratings and it fits Julien's budget, so I will place a hold on it now.\",\"listing_id\":\"L14\",\"quantity\":2}"
+          }
+        ],
+        "finish_reason": "tool_calls"
+      },
+      "usage": {
+        "prompt_tokens": 3091,
+        "completion_tokens": 48,
+        "latency_s": 1.34
+      },
+      "last_user_or_tool_msg": "{\"seller_id\": \"S07\", \"display_name\": \"RainCitySeats\", \"rating\": 4.4, \"completed_sales\": 18, \"on_time_transfer_rate\": 0.94, \"account_age_days\": 610, \"open_disputes\": 0, \"home_city\": \"Seattle\"}"
+    },
+    "reflect:approved": {
+      "response": {
+        "content": "{\"notes_to_add\":[\"Approved purchase for R16 tickets; stayed within budget of $400 for 2 tickets.\",\"Maintained preference for seats together, essential for attending with partner.\"],\"typical_max_per_ticket\":200,\"summary\":\"Julien successfully purchased 2 tickets for the Round of 16, adhering to his budget and seat preferences.\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 377,
+        "completion_tokens": 70,
+        "latency_s": 2.28
+      },
+      "last_user_or_tool_msg": "Current memory:\n- Name: Julien M.; home city: New York; languages: fr/en\n- Favorite national teams: France\n- Host cities within reach: New York New Jersey, Philadelphia, Boston\n- Budget habits: typically up to $210/ticket. Price-sensitive; will skip a match rather than overpay.\n- Seat preferences: s"
+    }
+  }
+}

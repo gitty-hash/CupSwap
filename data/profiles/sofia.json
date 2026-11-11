@@ -1,0 +1,48 @@
+{
+  "fan_id": "sofia",
+  "display_name": "Sofía R.",
+  "home_city": "Dallas",
+  "language": "es/en",
+  "favorite_teams": [
+    "Mexico"
+  ],
+  "cities_within_reach": [
+    "Dallas",
+    "Houston"
+  ],
+  "budget_habits": {
+    "typical_max_per_ticket": 200,
+    "notes": "Spends more for Mexico knockout matches, but sticks to the stated total budget."
+  },
+  "seat_preferences": {
+    "seats_together": "essential (always buys for herself and her brother)",
+    "preferred_area": "behind the Mexico goal / supporters' end",
+    "avoid": "lower-bowl prices"
+  },
+  "seller_rules": {
+    "min_seller_rating": 4.0,
+    "avoid_sellers": []
+  },
+  "past_purchases": [
+    {
+      "match_id": "GS-MEX-KOR",
+      "city": "Mexico City",
+      "tickets": 2,
+      "price_per_ticket": 150,
+      "seller_id": "S03",
+      "outcome": "smooth transfer"
+    },
+    {
+      "match_id": "R32-HOU",
+      "city": "Houston",
+      "tickets": 2,
+      "price_per_ticket": 165,
+      "seller_id": "S04",
+      "outcome": "transfer 2 hours late"
+    }
+  ],
+  "agent_notes": [
+    "Prefers sellers with a long track record after a late transfer in Houston."
+  ],
+  "last_updated": "2026-06-30"
+}

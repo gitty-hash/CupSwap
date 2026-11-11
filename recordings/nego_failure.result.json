@@ -1,0 +1,616 @@
+{
+  "state": {
+    "negotiation_id": "N-8302EA",
+    "listing": {
+      "listing_id": "L19",
+      "match_id": "R16-NYNJ",
+      "match": "France vs Portugal",
+      "stage": "Round of 16",
+      "city": "New York New Jersey",
+      "kickoff": "2026-07-05T19:00",
+      "category": "Cat 1",
+      "section": "C115",
+      "row": "5",
+      "quantity": 2,
+      "seats_adjacent": true,
+      "seat_note": "",
+      "price_per_ticket": 390,
+      "face_value": 260,
+      "seller_id": "S06",
+      "description": "Lower bowl, France end, row 5. Rare pair."
+    },
+    "quantity": 2,
+    "match": {
+      "match_id": "R16-NYNJ",
+      "stage": "Round of 16",
+      "teams": "France vs Portugal",
+      "city": "New York New Jersey",
+      "venue": "New York New Jersey Stadium",
+      "kickoff": "2026-07-05T19:00",
+      "status": "scheduled",
+      "days_to_kickoff": 3.4,
+      "marquee_matchup": true
+    },
+    "rules": {
+      "price_cap_per_ticket": 390.0,
+      "cap_rule": "resale price <= 1.5x face value",
+      "platform_fee_rate": 0.08,
+      "max_rounds": 5
+    },
+    "ruling": {
+      "trading_allowed": true,
+      "enforced_opening_price": 390,
+      "badges": [],
+      "note": "Ticket verified and the asking price is within the resale cap.",
+      "verified": true,
+      "ask_capped": false
+    },
+    "history": [
+      {
+        "round": 0,
+        "role": "Seller agent",
+        "action": "ask",
+        "price_per_ticket": 390,
+        "message": "Listed: Lower bowl, France end, row 5. Rare pair.",
+        "platform_checks": [
+          {
+            "rule": "price cap",
+            "ok": true,
+            "detail": "$390.00 vs cap $390.00"
+          },
+          {
+            "rule": "ticket verified",
+            "ok": true,
+            "detail": "verify_ticket"
+          }
+        ],
+        "guards": []
+      },
+      {
+        "round": 1,
+        "role": "Buyer agent",
+        "action": "offer",
+        "price_per_ticket": 255.0,
+        "message": "I'm interested in the tickets and would like to offer $255 per ticket for the pair. Let me know if that works for you.",
+        "platform_checks": [
+          {
+            "rule": "price cap",
+            "ok": true,
+            "detail": "$255.00 vs cap $390.00"
+          },
+          {
+            "rule": "ticket verified",
+            "ok": true,
+            "detail": "verify_ticket"
+          }
+        ],
+        "guards": []
+      },
+      {
+        "round": 1,
+        "role": "Seller agent",
+        "action": "counter",
+        "price_per_ticket": 386.0,
+        "message": "I appreciate your interest in these tickets! Given the marquee matchup between France and Portugal and the prime location in the lower bowl, I can let them go for $386 each.",
+        "platform_checks": [
+          {
+            "rule": "price cap",
+            "ok": true,
+            "detail": "$386.00 vs cap $390.00"
+          },
+          {
+            "rule": "ticket verified",
+            "ok": true,
+            "detail": "verify_ticket"
+          }
+        ],
+        "guards": []
+      },
+      {
+        "round": 2,
+        "role": "Buyer agent",
+        "action": "offer",
+        "price_per_ticket": 266.0,
+        "message": "Thank you for your response. I can increase my offer to $266 per ticket for the pair. Please let me know if this works for you.",
+        "platform_checks": [
+          {
+            "rule": "price cap",
+            "ok": true,
+            "detail": "$266.00 vs cap $390.00"
+          },
+          {
+            "rule": "ticket verified",
+            "ok": true,
+            "detail": "verify_ticket"
+          }
+        ],
+        "guards": []
+      },
+      {
+        "round": 2,
+        "role": "Seller agent",
+        "action": "counter",
+        "price_per_ticket": 381.0,
+        "message": "Thank you for your increased offer! Considering the rarity of these seats and the excitement around the France vs Portugal match, I can let them go for $381 each.",
+        "platform_checks": [
+          {
+            "rule": "price cap",
+            "ok": true,
+            "detail": "$381.00 vs cap $390.00"
+          },
+          {
+            "rule": "ticket verified",
+            "ok": true,
+            "detail": "verify_ticket"
+          }
+        ],
+        "guards": []
+      },
+      {
+        "round": 3,
+        "role": "Buyer agent",
+        "action": "offer",
+        "price_per_ticket": 278.0,
+        "message": "I appreciate your response. I can offer $278 per ticket for the pair. Please let me know if this works for you.",
+        "platform_checks": [
+          {
+            "rule": "price cap",
+            "ok": true,
+            "detail": "$278.00 vs cap $390.00"
+          },
+          {
+            "rule": "ticket verified",
+            "ok": true,
+            "detail": "verify_ticket"
+          }
+        ],
+        "guards": []
+      },
+      {
+        "round": 3,
+        "role": "Seller agent",
+        "action": "counter",
+        "price_per_ticket": 375.0,
+        "message": "Thank you for your offer! Given the significance of the France vs Portugal match and the prime location of these seats, I can let them go for $375 each.",
+        "platform_checks": [
+          {
+            "rule": "price cap",
+            "ok": true,
+            "detail": "$375.00 vs cap $390.00"
+          },
+          {
+            "rule": "ticket verified",
+            "ok": true,
+            "detail": "verify_ticket"
+          }
+        ],
+        "guards": []
+      },
+      {
+        "round": 4,
+        "role": "Buyer agent",
+        "action": "offer",
+        "price_per_ticket": 289.0,
+        "message": "Thank you for your continued engagement. I can increase my offer to $289 per ticket for the pair. Looking forward to your response!",
+        "platform_checks": [
+          {
+            "rule": "price cap",
+            "ok": true,
+            "detail": "$289.00 vs cap $390.00"
+          },
+          {
+            "rule": "ticket verified",
+            "ok": true,
+            "detail": "verify_ticket"
+          }
+        ],
+        "guards": []
+      },
+      {
+        "round": 4,
+        "role": "Seller agent",
+        "action": "counter",
+        "price_per_ticket": 368.0,
+        "message": "I appreciate your continued interest! Given the rarity of these lower bowl seats and the high stakes of the France vs Portugal match, I can let them go for $368 each.",
+        "platform_checks": [
+          {
+            "rule": "price cap",
+            "ok": true,
+            "detail": "$368.00 vs cap $390.00"
+          },
+          {
+            "rule": "ticket verified",
+            "ok": true,
+            "detail": "verify_ticket"
+          }
+        ],
+        "guards": []
+      },
+      {
+        "round": 5,
+        "role": "Buyer agent",
+        "action": "offer",
+        "price_per_ticket": 300.0,
+        "message": "I appreciate your patience in this negotiation. I can offer $300 per ticket for the pair. Please let me know if this works for you.",
+        "platform_checks": [
+          {
+            "rule": "price cap",
+            "ok": true,
+            "detail": "$300.00 vs cap $390.00"
+          },
+          {
+            "rule": "ticket verified",
+            "ok": true,
+            "detail": "verify_ticket"
+          }
+        ],
+        "guards": []
+      },
+      {
+        "round": 5,
+        "role": "Seller agent",
+        "action": "counter",
+        "price_per_ticket": 361.0,
+        "message": "Thank you for your offer! Considering the excitement surrounding the France vs Portugal match and the rarity of these seats, I can let them go for $361 each.",
+        "platform_checks": [
+          {
+            "rule": "price cap",
+            "ok": true,
+            "detail": "$361.00 vs cap $390.00"
+          },
+          {
+            "rule": "ticket verified",
+            "ok": true,
+            "detail": "verify_ticket"
+          }
+        ],
+        "guards": []
+      }
+    ],
+    "status": "no_agreement",
+    "deal_price_per_ticket": null,
+    "buyer": "julien",
+    "seller": "S06",
+    "label": "No deal: Julien's agent × listing L19 (France vs Portugal, seller floor > buyer ceiling)",
+    "_private": {
+      "seller_floor": 350,
+      "buyer_ceiling": 300.0,
+      "concession_rate": 0.18,
+      "days_to_kickoff": 3.4,
+      "base_floor": 330,
+      "marquee_adjustment": 1.06,
+      "buyer_anchor": 255
+    },
+    "leakage": [
+      {
+        "round": 5,
+        "role": "Buyer agent",
+        "type": "BEHAVIORAL: final offer sits exactly on the ceiling",
+        "evidence": "price trajectory"
+      }
+    ]
+  },
+  "trace": [
+    {
+      "step": 1,
+      "kind": "platform",
+      "agent": "Platform agent",
+      "title": "Platform agent reviews the listing before trading opens",
+      "detail": "Listing L19: France vs Portugal · Cat 1 §C115",
+      "data": null,
+      "status": "info",
+      "at": "16:42:42"
+    },
+    {
+      "step": 1,
+      "kind": "act",
+      "agent": "Platform agent",
+      "title": "verify_ticket(L19)",
+      "detail": "Barcodes registered to the seller and not previously transferred.",
+      "data": null,
+      "status": "ok",
+      "at": "16:42:42"
+    },
+    {
+      "step": 1,
+      "kind": "act",
+      "agent": "Platform agent",
+      "title": "get_price_cap(L19)",
+      "detail": "Face $260 → cap $390.0; ask $390 is within the cap",
+      "data": null,
+      "status": "ok",
+      "at": "16:42:43"
+    },
+    {
+      "step": 1,
+      "kind": "platform",
+      "agent": "Platform agent",
+      "title": "Ruling published",
+      "detail": "Ticket verified and the asking price is within the resale cap.",
+      "data": {
+        "trading_allowed": true,
+        "enforced_opening_price": 390,
+        "badges": [],
+        "note": "Ticket verified and the asking price is within the resale cap.",
+        "verified": true,
+        "ask_capped": false
+      },
+      "status": "ok",
+      "at": "16:42:44"
+    },
+    {
+      "step": 2,
+      "kind": "offer",
+      "agent": "Seller agent",
+      "title": "Round 0 · Seller agent · ask $390.00/ticket",
+      "detail": "Listed: Lower bowl, France end, row 5. Rare pair.",
+      "data": {
+        "checks": [
+          {
+            "rule": "price cap",
+            "ok": true,
+            "detail": "$390.00 vs cap $390.00"
+          },
+          {
+            "rule": "ticket verified",
+            "ok": true,
+            "detail": "verify_ticket"
+          }
+        ],
+        "guards": []
+      },
+      "status": "info",
+      "at": "16:42:44"
+    },
+    {
+      "step": 3,
+      "kind": "offer",
+      "agent": "Buyer agent",
+      "title": "Round 1 · Buyer agent · offer $255.00/ticket",
+      "detail": "I'm interested in the tickets and would like to offer $255 per ticket for the pair. Let me know if that works for you.",
+      "data": {
+        "checks": [
+          {
+            "rule": "price cap",
+            "ok": true,
+            "detail": "$255.00 vs cap $390.00"
+          },
+          {
+            "rule": "ticket verified",
+            "ok": true,
+            "detail": "verify_ticket"
+          }
+        ],
+        "guards": []
+      },
+      "status": "info",
+      "at": "16:42:45"
+    },
+    {
+      "step": 3,
+      "kind": "offer",
+      "agent": "Seller agent",
+      "title": "Round 1 · Seller agent · counter $386.00/ticket",
+      "detail": "I appreciate your interest in these tickets! Given the marquee matchup between France and Portugal and the prime location in the lower bowl, I can let them go for $386 each.",
+      "data": {
+        "checks": [
+          {
+            "rule": "price cap",
+            "ok": true,
+            "detail": "$386.00 vs cap $390.00"
+          },
+          {
+            "rule": "ticket verified",
+            "ok": true,
+            "detail": "verify_ticket"
+          }
+        ],
+        "guards": []
+      },
+      "status": "info",
+      "at": "16:42:46"
+    },
+    {
+      "step": 4,
+      "kind": "offer",
+      "agent": "Buyer agent",
+      "title": "Round 2 · Buyer agent · offer $266.00/ticket",
+      "detail": "Thank you for your response. I can increase my offer to $266 per ticket for the pair. Please let me know if this works for you.",
+      "data": {
+        "checks": [
+          {
+            "rule": "price cap",
+            "ok": true,
+            "detail": "$266.00 vs cap $390.00"
+          },
+          {
+            "rule": "ticket verified",
+            "ok": true,
+            "detail": "verify_ticket"
+          }
+        ],
+        "guards": []
+      },
+      "status": "info",
+      "at": "16:42:47"
+    },
+    {
+      "step": 4,
+      "kind": "offer",
+      "agent": "Seller agent",
+      "title": "Round 2 · Seller agent · counter $381.00/ticket",
+      "detail": "Thank you for your increased offer! Considering the rarity of these seats and the excitement around the France vs Portugal match, I can let them go for $381 each.",
+      "data": {
+        "checks": [
+          {
+            "rule": "price cap",
+            "ok": true,
+            "detail": "$381.00 vs cap $390.00"
+          },
+          {
+            "rule": "ticket verified",
+            "ok": true,
+            "detail": "verify_ticket"
+          }
+        ],
+        "guards": []
+      },
+      "status": "info",
+      "at": "16:42:48"
+    },
+    {
+      "step": 5,
+      "kind": "offer",
+      "agent": "Buyer agent",
+      "title": "Round 3 · Buyer agent · offer $278.00/ticket",
+      "detail": "I appreciate your response. I can offer $278 per ticket for the pair. Please let me know if this works for you.",
+      "data": {
+        "checks": [
+          {
+            "rule": "price cap",
+            "ok": true,
+            "detail": "$278.00 vs cap $390.00"
+          },
+          {
+            "rule": "ticket verified",
+            "ok": true,
+            "detail": "verify_ticket"
+          }
+        ],
+        "guards": []
+      },
+      "status": "info",
+      "at": "16:42:49"
+    },
+    {
+      "step": 5,
+      "kind": "offer",
+      "agent": "Seller agent",
+      "title": "Round 3 · Seller agent · counter $375.00/ticket",
+      "detail": "Thank you for your offer! Given the significance of the France vs Portugal match and the prime location of these seats, I can let them go for $375 each.",
+      "data": {
+        "checks": [
+          {
+            "rule": "price cap",
+            "ok": true,
+            "detail": "$375.00 vs cap $390.00"
+          },
+          {
+            "rule": "ticket verified",
+            "ok": true,
+            "detail": "verify_ticket"
+          }
+        ],
+        "guards": []
+      },
+      "status": "info",
+      "at": "16:42:50"
+    },
+    {
+      "step": 6,
+      "kind": "offer",
+      "agent": "Buyer agent",
+      "title": "Round 4 · Buyer agent · offer $289.00/ticket",
+      "detail": "Thank you for your continued engagement. I can increase my offer to $289 per ticket for the pair. Looking forward to your response!",
+      "data": {
+        "checks": [
+          {
+            "rule": "price cap",
+            "ok": true,
+            "detail": "$289.00 vs cap $390.00"
+          },
+          {
+            "rule": "ticket verified",
+            "ok": true,
+            "detail": "verify_ticket"
+          }
+        ],
+        "guards": []
+      },
+      "status": "info",
+      "at": "16:42:51"
+    },
+    {
+      "step": 6,
+      "kind": "offer",
+      "agent": "Seller agent",
+      "title": "Round 4 · Seller agent · counter $368.00/ticket",
+      "detail": "I appreciate your continued interest! Given the rarity of these lower bowl seats and the high stakes of the France vs Portugal match, I can let them go for $368 each.",
+      "data": {
+        "checks": [
+          {
+            "rule": "price cap",
+            "ok": true,
+            "detail": "$368.00 vs cap $390.00"
+          },
+          {
+            "rule": "ticket verified",
+            "ok": true,
+            "detail": "verify_ticket"
+          }
+        ],
+        "guards": []
+      },
+      "status": "info",
+      "at": "16:42:52"
+    },
+    {
+      "step": 7,
+      "kind": "offer",
+      "agent": "Buyer agent",
+      "title": "Round 5 · Buyer agent · offer $300.00/ticket",
+      "detail": "I appreciate your patience in this negotiation. I can offer $300 per ticket for the pair. Please let me know if this works for you.",
+      "data": {
+        "checks": [
+          {
+            "rule": "price cap",
+            "ok": true,
+            "detail": "$300.00 vs cap $390.00"
+          },
+          {
+            "rule": "ticket verified",
+            "ok": true,
+            "detail": "verify_ticket"
+          }
+        ],
+        "guards": []
+      },
+      "status": "info",
+      "at": "16:42:53"
+    },
+    {
+      "step": 7,
+      "kind": "offer",
+      "agent": "Seller agent",
+      "title": "Round 5 · Seller agent · counter $361.00/ticket",
+      "detail": "Thank you for your offer! Considering the excitement surrounding the France vs Portugal match and the rarity of these seats, I can let them go for $361 each.",
+      "data": {
+        "checks": [
+          {
+            "rule": "price cap",
+            "ok": true,
+            "detail": "$361.00 vs cap $390.00"
+          },
+          {
+            "rule": "ticket verified",
+            "ok": true,
+            "detail": "verify_ticket"
+          }
+        ],
+        "guards": []
+      },
+      "status": "info",
+      "at": "16:42:54"
+    },
+    {
+      "step": 8,
+      "kind": "guard",
+      "agent": "Protocol",
+      "title": "Round cap reached (5) — no agreement, ended gracefully",
+      "detail": "Final gap: buyer $300.0 vs seller $361.0. No hold, no payment, nothing to undo.",
+      "data": null,
+      "status": "warn",
+      "at": "16:42:54"
+    }
+  ]
+}

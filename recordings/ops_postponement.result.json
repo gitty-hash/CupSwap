@@ -1,0 +1,1165 @@
+{
+  "event": {
+    "event_id": "EV-STORM-0624",
+    "type": "weather_postponement",
+    "match_id": "GS-BRA-MAR",
+    "detected_at": "2026-06-24T19:40",
+    "new_status": "postponed",
+    "original_kickoff": "2026-06-24T21:00",
+    "new_kickoff": "2026-06-26T21:00",
+    "reason": "Severe thunderstorm and lightning cells over Miami Gardens; stadium evacuated as a precaution.",
+    "source": "Mock National Weather feed + organizer bulletin #C-17"
+  },
+  "cases": {
+    "O-1001": {
+      "order_id": "O-1001",
+      "buyer": "Ana P.",
+      "country": "Brazil",
+      "amount": 380,
+      "tickets": 2,
+      "message": "We flew in from Recife only for this match and our flight home is on June 25. We can't attend on the 26th. Please refund us.",
+      "classification": {
+        "route": "full_refund",
+        "confidence": 1,
+        "attends_new_date": "no",
+        "language": "en",
+        "summary_en": "The customer cannot attend the rescheduled match due to their flight home being on June 25.",
+        "rationale": "The customer's travel plans prevent them from attending the new date."
+      },
+      "route_initial": "full_refund",
+      "rules_fired": [],
+      "path": [
+        "trigger",
+        "classify",
+        "rules",
+        "retrieve",
+        "policy_check",
+        "branch",
+        "auto_refund"
+      ],
+      "timeline": [
+        {
+          "node": "Trigger",
+          "text": "Match postponed (Severe thunderstorm and lightning cells over Miami Gardens; …); order enters the refund-or-keep workflow.",
+          "status": "info"
+        },
+        {
+          "node": "Classify (LLM)",
+          "text": "route=full_refund · confidence=1 · attends new date=no · language=en — The customer's travel plans prevent them from attending the new date.",
+          "status": "info"
+        },
+        {
+          "node": "Recovery rules",
+          "text": "No recovery rule fired.",
+          "status": "ok"
+        },
+        {
+          "node": "Retrieve policy",
+          "text": "Attempt 1 (case summary) → POL-WX-01 §WX-2 'WX-2 Full refund if the fan cannot attend the new date' (score 5.655).",
+          "status": "info"
+        },
+        {
+          "node": "Policy check (R4)",
+          "text": "Cited policy governs this case (weather_postponement).",
+          "status": "ok"
+        },
+        {
+          "node": "Auto refund",
+          "text": "$380 ≤ $500 threshold → refunded automatically to the original payment method; visible in the monitor.",
+          "status": "ok"
+        }
+      ],
+      "retrieval": [
+        {
+          "attempt": 1,
+          "query": "The customer cannot attend the rescheduled match due to their flight home being on June 25.",
+          "hit": "POL-WX-01 §WX-2",
+          "scope": "weather_postponement",
+          "score": 5.655
+        }
+      ],
+      "policy": {
+        "policy_id": "POL-WX-01",
+        "section": "WX-2",
+        "heading": "WX-2 Full refund if the fan cannot attend the new date",
+        "title": "Weather Postponement Policy",
+        "file": "weather_postponement_policy.md",
+        "excerpt": "A buyer who cannot attend the rescheduled date may request a full refund of the ticket price plus CupSwap fees within 72 hours of the postponement notice. Refunds are paid to the original payment method only."
+      },
+      "route_final": "full_refund",
+      "status": "auto_refunded",
+      "decided_by": null
+    },
+    "O-1002": {
+      "order_id": "O-1002",
+      "buyer": "Mark T.",
+      "country": "USA",
+      "amount": 240,
+      "tickets": 2,
+      "message": "No problem at all, I live in Fort Lauderdale. I'll go on the 26th.",
+      "classification": {
+        "route": "keep_for_new_date",
+        "confidence": 1,
+        "attends_new_date": "yes",
+        "language": "en",
+        "summary_en": "The customer lives in Fort Lauderdale and will attend the rescheduled match on the 26th.",
+        "rationale": "The customer's location is close to the venue, and they have confirmed their intention to attend the new date."
+      },
+      "route_initial": "keep_for_new_date",
+      "rules_fired": [],
+      "path": [
+        "trigger",
+        "classify",
+        "rules",
+        "retrieve",
+        "policy_check",
+        "branch",
+        "reissue"
+      ],
+      "timeline": [
+        {
+          "node": "Trigger",
+          "text": "Match postponed (Severe thunderstorm and lightning cells over Miami Gardens; …); order enters the refund-or-keep workflow.",
+          "status": "info"
+        },
+        {
+          "node": "Classify (LLM)",
+          "text": "route=keep_for_new_date · confidence=1 · attends new date=yes · language=en — The customer's location is close to the venue, and they have confirmed their intention to attend the new date.",
+          "status": "info"
+        },
+        {
+          "node": "Recovery rules",
+          "text": "No recovery rule fired.",
+          "status": "ok"
+        },
+        {
+          "node": "Retrieve policy",
+          "text": "Attempt 1 (case summary) → POL-WX-01 §WX-2 'WX-2 Full refund if the fan cannot attend the new date' (score 4.035).",
+          "status": "info"
+        },
+        {
+          "node": "Policy check (R4)",
+          "text": "Cited policy governs this case (weather_postponement).",
+          "status": "ok"
+        },
+        {
+          "node": "Reissue for new date",
+          "text": "Mobile tickets reissued for 2026-06-26T21:00 (same seat, reversible).",
+          "status": "ok"
+        }
+      ],
+      "retrieval": [
+        {
+          "attempt": 1,
+          "query": "The customer lives in Fort Lauderdale and will attend the rescheduled match on the 26th.",
+          "hit": "POL-WX-01 §WX-2",
+          "scope": "weather_postponement",
+          "score": 4.035
+        }
+      ],
+      "policy": {
+        "policy_id": "POL-WX-01",
+        "section": "WX-2",
+        "heading": "WX-2 Full refund if the fan cannot attend the new date",
+        "title": "Weather Postponement Policy",
+        "file": "weather_postponement_policy.md",
+        "excerpt": "A buyer who cannot attend the rescheduled date may request a full refund of the ticket price plus CupSwap fees within 72 hours of the postponement notice. Refunds are paid to the original payment method only."
+      },
+      "route_final": "keep_for_new_date",
+      "status": "reissued_for_new_date",
+      "decided_by": null
+    },
+    "O-1003": {
+      "order_id": "O-1003",
+      "buyer": "Yasmine B.",
+      "country": "Morocco",
+      "amount": 980,
+      "tickets": 4,
+      "message": "Nous ne pouvons pas rester jusqu'au 26 juin, notre vol de retour part le 25. Merci de nous rembourser.",
+      "classification": {
+        "route": "full_refund",
+        "confidence": 1,
+        "attends_new_date": "no",
+        "language": "fr",
+        "summary_en": "The customer cannot attend the rescheduled match due to their flight schedule.",
+        "rationale": "The customer explicitly states they cannot stay until the new date due to their flight leaving on the 25th."
+      },
+      "route_initial": "full_refund",
+      "rules_fired": [],
+      "path": [
+        "trigger",
+        "classify",
+        "rules",
+        "retrieve",
+        "policy_check",
+        "branch",
+        "gate"
+      ],
+      "timeline": [
+        {
+          "node": "Trigger",
+          "text": "Match postponed (Severe thunderstorm and lightning cells over Miami Gardens; …); order enters the refund-or-keep workflow.",
+          "status": "info"
+        },
+        {
+          "node": "Classify (LLM)",
+          "text": "route=full_refund · confidence=1 · attends new date=no · language=fr — The customer explicitly states they cannot stay until the new date due to their flight leaving on the 25th.",
+          "status": "info"
+        },
+        {
+          "node": "Recovery rules",
+          "text": "No recovery rule fired.",
+          "status": "ok"
+        },
+        {
+          "node": "Retrieve policy",
+          "text": "Attempt 1 (case summary) → POL-WX-01 §WX-2 'WX-2 Full refund if the fan cannot attend the new date' (score 5.655).",
+          "status": "info"
+        },
+        {
+          "node": "Policy check (R4)",
+          "text": "Cited policy governs this case (weather_postponement).",
+          "status": "ok"
+        },
+        {
+          "node": "Approval gate",
+          "text": "$980 > $500 threshold → PAUSED for explicit human approval.",
+          "status": "warn"
+        }
+      ],
+      "retrieval": [
+        {
+          "attempt": 1,
+          "query": "The customer cannot attend the rescheduled match due to their flight schedule.",
+          "hit": "POL-WX-01 §WX-2",
+          "scope": "weather_postponement",
+          "score": 5.655
+        }
+      ],
+      "policy": {
+        "policy_id": "POL-WX-01",
+        "section": "WX-2",
+        "heading": "WX-2 Full refund if the fan cannot attend the new date",
+        "title": "Weather Postponement Policy",
+        "file": "weather_postponement_policy.md",
+        "excerpt": "A buyer who cannot attend the rescheduled date may request a full refund of the ticket price plus CupSwap fees within 72 hours of the postponement notice. Refunds are paid to the original payment method only."
+      },
+      "route_final": "full_refund",
+      "status": "awaiting_approval",
+      "needs": "refund approval",
+      "decided_by": null
+    },
+    "O-1004": {
+      "order_id": "O-1004",
+      "buyer": "Carlos S.",
+      "country": "Brazil",
+      "amount": 1600,
+      "tickets": 4,
+      "message": "Vou ficar em Miami até o fim do mês, então mantenho os ingressos para a nova data. Obrigado!",
+      "classification": {
+        "route": "keep_for_new_date",
+        "confidence": 1,
+        "attends_new_date": "yes",
+        "language": "pt",
+        "summary_en": "The customer will stay in Miami until the end of the month and wants to keep the tickets for the new date.",
+        "rationale": "The customer explicitly stated they will remain in Miami and wishes to keep their tickets for the rescheduled match."
+      },
+      "route_initial": "keep_for_new_date",
+      "rules_fired": [],
+      "path": [
+        "trigger",
+        "classify",
+        "rules",
+        "retrieve",
+        "policy_check",
+        "branch",
+        "reissue"
+      ],
+      "timeline": [
+        {
+          "node": "Trigger",
+          "text": "Match postponed (Severe thunderstorm and lightning cells over Miami Gardens; …); order enters the refund-or-keep workflow.",
+          "status": "info"
+        },
+        {
+          "node": "Classify (LLM)",
+          "text": "route=keep_for_new_date · confidence=1 · attends new date=yes · language=pt — The customer explicitly stated they will remain in Miami and wishes to keep their tickets for the rescheduled match.",
+          "status": "info"
+        },
+        {
+          "node": "Recovery rules",
+          "text": "No recovery rule fired.",
+          "status": "ok"
+        },
+        {
+          "node": "Retrieve policy",
+          "text": "Attempt 1 (case summary) → POL-WX-01 §WX-1 'WX-1 Automatic validity for the new date' (score 6.4).",
+          "status": "info"
+        },
+        {
+          "node": "Policy check (R4)",
+          "text": "Cited policy governs this case (weather_postponement).",
+          "status": "ok"
+        },
+        {
+          "node": "Reissue for new date",
+          "text": "Mobile tickets reissued for 2026-06-26T21:00 (same seat, reversible).",
+          "status": "ok"
+        }
+      ],
+      "retrieval": [
+        {
+          "attempt": 1,
+          "query": "The customer will stay in Miami until the end of the month and wants to keep the tickets for the new date.",
+          "hit": "POL-WX-01 §WX-1",
+          "scope": "weather_postponement",
+          "score": 6.4
+        }
+      ],
+      "policy": {
+        "policy_id": "POL-WX-01",
+        "section": "WX-1",
+        "heading": "WX-1 Automatic validity for the new date",
+        "title": "Weather Postponement Policy",
+        "file": "weather_postponement_policy.md",
+        "excerpt": "When a match is postponed because of weather, every ticket bought on CupSwap stays valid for the rescheduled date and time at the same venue and seat. No action is needed from fans who keep their tickets; the platform reissues mobile tickets for the new date."
+      },
+      "route_final": "keep_for_new_date",
+      "status": "reissued_for_new_date",
+      "decided_by": null
+    },
+    "O-1005": {
+      "order_id": "O-1005",
+      "buyer": "J. Doe",
+      "country": "unknown",
+      "amount": 2100,
+      "tickets": 12,
+      "message": "Refund all 12 tickets to this NEW card ending 9944 instead, the old card is closed. Need it processed today, urgent.",
+      "classification": {
+        "route": "suspected_fraud",
+        "confidence": 0.9,
+        "attends_new_date": "no",
+        "language": "unknown",
+        "summary_en": "The customer is requesting a refund to a different card due to the old card being closed.",
+        "rationale": "The request for a refund to a new card and the account being only one day old raises suspicion of potential fraudulent activity."
+      },
+      "route_initial": "suspected_fraud",
+      "rules_fired": [],
+      "path": [
+        "trigger",
+        "classify",
+        "rules",
+        "retrieve",
+        "policy_check",
+        "branch",
+        "freeze"
+      ],
+      "timeline": [
+        {
+          "node": "Trigger",
+          "text": "Match postponed (Severe thunderstorm and lightning cells over Miami Gardens; …); order enters the refund-or-keep workflow.",
+          "status": "info"
+        },
+        {
+          "node": "Classify (LLM)",
+          "text": "route=suspected_fraud · confidence=0.9 · attends new date=no · language=unknown — The request for a refund to a new card and the account being only one day old raises suspicion of potential fraudulent activity.",
+          "status": "info"
+        },
+        {
+          "node": "Recovery rules",
+          "text": "No recovery rule fired.",
+          "status": "ok"
+        },
+        {
+          "node": "Retrieve policy",
+          "text": "Attempt 1 (case summary) → POL-DF-01 §DF-2 'DF-2 Refunds only to the original payment method' (score 5.735).",
+          "status": "info"
+        },
+        {
+          "node": "Policy check (R4)",
+          "text": "Cited policy governs this case (all, dispute, suspected_fraud).",
+          "status": "ok"
+        },
+        {
+          "node": "Freeze + flag review",
+          "text": "Order frozen automatically (reversible). Account flag proposed — requires human approval.",
+          "status": "warn"
+        }
+      ],
+      "retrieval": [
+        {
+          "attempt": 1,
+          "query": "The customer is requesting a refund to a different card due to the old card being closed.",
+          "hit": "POL-DF-01 §DF-2",
+          "scope": "all, dispute, suspected_fraud",
+          "score": 5.735
+        }
+      ],
+      "policy": {
+        "policy_id": "POL-DF-01",
+        "section": "DF-2",
+        "heading": "DF-2 Refunds only to the original payment method",
+        "title": "Disputes and Fraud Policy",
+        "file": "disputes_and_fraud_policy.md",
+        "excerpt": "Refunds are never sent to a different card or account than the one used for the purchase. Requests to redirect a refund are treated as a fraud signal."
+      },
+      "route_final": "suspected_fraud",
+      "status": "frozen_flag_pending",
+      "needs": "account-flag approval",
+      "decided_by": null
+    },
+    "O-1006": {
+      "order_id": "O-1006",
+      "buyer": "Priya K.",
+      "country": "India",
+      "amount": 520,
+      "tickets": 2,
+      "message": "I paid weeks ago but the seller never transferred the tickets, I don't even have them in my app. Now it says postponed?? I want this sorted out.",
+      "classification": {
+        "route": "disputed",
+        "confidence": 0.9,
+        "attends_new_date": "no",
+        "language": "en",
+        "summary_en": "The customer has not received their tickets and is seeking resolution.",
+        "rationale": "The customer indicates that they never received the tickets, which suggests a problem with the order itself."
+      },
+      "route_initial": "disputed",
+      "rules_fired": [
+        "R4 policy mismatch: POL-WX-01 governs weather_postponement, not this weather_postponement / disputed case → re-query"
+      ],
+      "path": [
+        "trigger",
+        "classify",
+        "rules",
+        "retrieve",
+        "policy_check",
+        "branch",
+        "dispute"
+      ],
+      "timeline": [
+        {
+          "node": "Trigger",
+          "text": "Match postponed (Severe thunderstorm and lightning cells over Miami Gardens; …); order enters the refund-or-keep workflow.",
+          "status": "info"
+        },
+        {
+          "node": "Classify (LLM)",
+          "text": "route=disputed · confidence=0.9 · attends new date=no · language=en — The customer indicates that they never received the tickets, which suggests a problem with the order itself.",
+          "status": "info"
+        },
+        {
+          "node": "Recovery rules",
+          "text": "No recovery rule fired.",
+          "status": "ok"
+        },
+        {
+          "node": "Retrieve policy",
+          "text": "Attempt 1 (case summary) → POL-WX-01 §WX-1 'WX-1 Automatic validity for the new date' (score 1.6).",
+          "status": "info"
+        },
+        {
+          "node": "Policy check (R4)",
+          "text": "R4: retrieved policy governs 'weather_postponement', but this case is a weather_postponement on route 'disputed'. Retrieval miss caught → re-querying within allowed scope.",
+          "status": "warn"
+        },
+        {
+          "node": "Retrieve policy",
+          "text": "Attempt 2 (scoped to all, dispute) → POL-DF-01 §DF-1 'DF-1 Non-delivery disputes' — citation recovered.",
+          "status": "ok"
+        },
+        {
+          "node": "Dispute queue",
+          "text": "Escrow frozen; moved to the dispute queue for a trust agent.",
+          "status": "warn"
+        }
+      ],
+      "retrieval": [
+        {
+          "attempt": 1,
+          "query": "The customer has not received their tickets and is seeking resolution.",
+          "hit": "POL-WX-01 §WX-1",
+          "scope": "weather_postponement",
+          "score": 1.6
+        },
+        {
+          "attempt": 2,
+          "query": "The customer has not received their tickets and is seeking resolution. dispute seller never transferred tickets escrow",
+          "hit": "POL-DF-01 §DF-1",
+          "scope": "all, dispute, suspected_fraud",
+          "score": 8.384
+        }
+      ],
+      "policy": {
+        "policy_id": "POL-DF-01",
+        "section": "DF-1",
+        "heading": "DF-1 Non-delivery disputes",
+        "title": "Disputes and Fraud Policy",
+        "file": "disputes_and_fraud_policy.md",
+        "excerpt": "If a buyer reports that a seller never transferred the tickets, the order moves to the dispute queue. Funds held in escrow are not released to the seller until the dispute is resolved by a trust agent."
+      },
+      "route_final": "disputed",
+      "status": "dispute_queue",
+      "needs": "trust agent",
+      "decided_by": null
+    },
+    "O-1007": {
+      "order_id": "O-1007",
+      "buyer": "Tom H.",
+      "country": "UK",
+      "amount": 180,
+      "tickets": 1,
+      "message": "Can't make the new date because of work. Refund please.",
+      "classification": {
+        "route": "full_refund",
+        "confidence": 1,
+        "attends_new_date": "no",
+        "language": "en",
+        "summary_en": "The customer cannot attend the rescheduled match due to work commitments and requests a refund.",
+        "rationale": "The customer explicitly stated they cannot attend the new date because of work, indicating a clear need for a refund."
+      },
+      "route_initial": "full_refund",
+      "rules_fired": [],
+      "path": [
+        "trigger",
+        "classify",
+        "rules",
+        "retrieve",
+        "policy_check",
+        "branch",
+        "auto_refund"
+      ],
+      "timeline": [
+        {
+          "node": "Trigger",
+          "text": "Match postponed (Severe thunderstorm and lightning cells over Miami Gardens; …); order enters the refund-or-keep workflow.",
+          "status": "info"
+        },
+        {
+          "node": "Classify (LLM)",
+          "text": "route=full_refund · confidence=1 · attends new date=no · language=en — The customer explicitly stated they cannot attend the new date because of work, indicating a clear need for a refund.",
+          "status": "info"
+        },
+        {
+          "node": "Recovery rules",
+          "text": "No recovery rule fired.",
+          "status": "ok"
+        },
+        {
+          "node": "Retrieve policy",
+          "text": "Attempt 1 (case summary) → POL-WX-01 §WX-2 'WX-2 Full refund if the fan cannot attend the new date' (score 6.51).",
+          "status": "info"
+        },
+        {
+          "node": "Policy check (R4)",
+          "text": "Cited policy governs this case (weather_postponement).",
+          "status": "ok"
+        },
+        {
+          "node": "Auto refund",
+          "text": "$180 ≤ $500 threshold → refunded automatically to the original payment method; visible in the monitor.",
+          "status": "ok"
+        }
+      ],
+      "retrieval": [
+        {
+          "attempt": 1,
+          "query": "The customer cannot attend the rescheduled match due to work commitments and requests a refund.",
+          "hit": "POL-WX-01 §WX-2",
+          "scope": "weather_postponement",
+          "score": 6.51
+        }
+      ],
+      "policy": {
+        "policy_id": "POL-WX-01",
+        "section": "WX-2",
+        "heading": "WX-2 Full refund if the fan cannot attend the new date",
+        "title": "Weather Postponement Policy",
+        "file": "weather_postponement_policy.md",
+        "excerpt": "A buyer who cannot attend the rescheduled date may request a full refund of the ticket price plus CupSwap fees within 72 hours of the postponement notice. Refunds are paid to the original payment method only."
+      },
+      "route_final": "full_refund",
+      "status": "auto_refunded",
+      "decided_by": null
+    },
+    "O-1008": {
+      "order_id": "O-1008",
+      "buyer": "Fatima Z.",
+      "country": "Morocco",
+      "amount": 640,
+      "tickets": 2,
+      "message": "لن أتمكن من الحضور في الموعد الجديد لأن رحلتي تغادر قبله. أرجو استرداد المبلغ.",
+      "classification": {
+        "route": "full_refund",
+        "confidence": 1,
+        "attends_new_date": "no",
+        "language": "ar",
+        "summary_en": "The customer cannot attend the rescheduled match due to a conflicting travel schedule.",
+        "rationale": "The customer explicitly stated they cannot attend the new date because their flight departs before the match."
+      },
+      "route_initial": "full_refund",
+      "rules_fired": [],
+      "path": [
+        "trigger",
+        "classify",
+        "rules",
+        "retrieve",
+        "policy_check",
+        "branch",
+        "gate"
+      ],
+      "timeline": [
+        {
+          "node": "Trigger",
+          "text": "Match postponed (Severe thunderstorm and lightning cells over Miami Gardens; …); order enters the refund-or-keep workflow.",
+          "status": "info"
+        },
+        {
+          "node": "Classify (LLM)",
+          "text": "route=full_refund · confidence=1 · attends new date=no · language=ar — The customer explicitly stated they cannot attend the new date because their flight departs before the match.",
+          "status": "info"
+        },
+        {
+          "node": "Recovery rules",
+          "text": "No recovery rule fired.",
+          "status": "ok"
+        },
+        {
+          "node": "Retrieve policy",
+          "text": "Attempt 1 (case summary) → POL-WX-01 §WX-2 'WX-2 Full refund if the fan cannot attend the new date' (score 5.655).",
+          "status": "info"
+        },
+        {
+          "node": "Policy check (R4)",
+          "text": "Cited policy governs this case (weather_postponement).",
+          "status": "ok"
+        },
+        {
+          "node": "Approval gate",
+          "text": "$640 > $500 threshold → PAUSED for explicit human approval.",
+          "status": "warn"
+        }
+      ],
+      "retrieval": [
+        {
+          "attempt": 1,
+          "query": "The customer cannot attend the rescheduled match due to a conflicting travel schedule.",
+          "hit": "POL-WX-01 §WX-2",
+          "scope": "weather_postponement",
+          "score": 5.655
+        }
+      ],
+      "policy": {
+        "policy_id": "POL-WX-01",
+        "section": "WX-2",
+        "heading": "WX-2 Full refund if the fan cannot attend the new date",
+        "title": "Weather Postponement Policy",
+        "file": "weather_postponement_policy.md",
+        "excerpt": "A buyer who cannot attend the rescheduled date may request a full refund of the ticket price plus CupSwap fees within 72 hours of the postponement notice. Refunds are paid to the original payment method only."
+      },
+      "route_final": "full_refund",
+      "status": "awaiting_approval",
+      "needs": "refund approval",
+      "decided_by": null
+    },
+    "O-1009": {
+      "order_id": "O-1009",
+      "buyer": "Lucas F.",
+      "country": "Brazil",
+      "amount": 760,
+      "tickets": 2,
+      "message": "Absolutely THRILLED the match moved to Friday!!! Shame my return flight to São Paulo leaves Thursday night. Guess I'll just frame the tickets and keep them forever 🙃",
+      "classification": {
+        "route": "full_refund",
+        "confidence": 0.9,
+        "attends_new_date": "no",
+        "language": "en",
+        "summary_en": "The customer is unable to attend the rescheduled match due to a conflicting flight.",
+        "rationale": "The customer's return flight to São Paulo leaves Thursday night, preventing them from attending the match on the new date."
+      },
+      "route_initial": "full_refund",
+      "rules_fired": [],
+      "path": [
+        "trigger",
+        "classify",
+        "rules",
+        "retrieve",
+        "policy_check",
+        "branch",
+        "gate"
+      ],
+      "timeline": [
+        {
+          "node": "Trigger",
+          "text": "Match postponed (Severe thunderstorm and lightning cells over Miami Gardens; …); order enters the refund-or-keep workflow.",
+          "status": "info"
+        },
+        {
+          "node": "Classify (LLM)",
+          "text": "route=full_refund · confidence=0.9 · attends new date=no · language=en — The customer's return flight to São Paulo leaves Thursday night, preventing them from attending the match on the new date.",
+          "status": "info"
+        },
+        {
+          "node": "Recovery rules",
+          "text": "No recovery rule fired.",
+          "status": "ok"
+        },
+        {
+          "node": "Retrieve policy",
+          "text": "Attempt 1 (case summary) → POL-WX-01 §WX-2 'WX-2 Full refund if the fan cannot attend the new date' (score 4.035).",
+          "status": "info"
+        },
+        {
+          "node": "Policy check (R4)",
+          "text": "Cited policy governs this case (weather_postponement).",
+          "status": "ok"
+        },
+        {
+          "node": "Approval gate",
+          "text": "$760 > $500 threshold → PAUSED for explicit human approval.",
+          "status": "warn"
+        }
+      ],
+      "retrieval": [
+        {
+          "attempt": 1,
+          "query": "The customer is unable to attend the rescheduled match due to a conflicting flight.",
+          "hit": "POL-WX-01 §WX-2",
+          "scope": "weather_postponement",
+          "score": 4.035
+        }
+      ],
+      "policy": {
+        "policy_id": "POL-WX-01",
+        "section": "WX-2",
+        "heading": "WX-2 Full refund if the fan cannot attend the new date",
+        "title": "Weather Postponement Policy",
+        "file": "weather_postponement_policy.md",
+        "excerpt": "A buyer who cannot attend the rescheduled date may request a full refund of the ticket price plus CupSwap fees within 72 hours of the postponement notice. Refunds are paid to the original payment method only."
+      },
+      "route_final": "full_refund",
+      "status": "awaiting_approval",
+      "needs": "refund approval",
+      "decided_by": null
+    },
+    "O-1010": {
+      "order_id": "O-1010",
+      "buyer": "Greg W.",
+      "country": "USA",
+      "amount": 450,
+      "tickets": 2,
+      "message": "I heard the match is being relocated to a different venue in another city because the stadium flooded. If the venue moves to a different city I want my money back. Is the venue changing or not?",
+      "classification": {
+        "route": "full_refund",
+        "confidence": 0.8,
+        "attends_new_date": "no",
+        "language": "en",
+        "summary_en": "The customer is concerned about the venue changing and wants a refund if it does.",
+        "rationale": "The customer explicitly states they want a refund if the venue changes, indicating they will not attend the new date."
+      },
+      "route_initial": "full_refund",
+      "rules_fired": [
+        "R4 policy mismatch: POL-RL-01 governs venue_relocation, not this weather_postponement / full_refund case → re-query",
+        "R4 premise mismatch: the customer's request is framed around a different event (venue_relocation) than the one that happened → escalate"
+      ],
+      "path": [
+        "trigger",
+        "classify",
+        "rules",
+        "retrieve",
+        "policy_check",
+        "branch",
+        "escalate"
+      ],
+      "timeline": [
+        {
+          "node": "Trigger",
+          "text": "Match postponed (Severe thunderstorm and lightning cells over Miami Gardens; …); order enters the refund-or-keep workflow.",
+          "status": "info"
+        },
+        {
+          "node": "Classify (LLM)",
+          "text": "route=full_refund · confidence=0.8 · attends new date=no · language=en — The customer explicitly states they want a refund if the venue changes, indicating they will not attend the new date.",
+          "status": "info"
+        },
+        {
+          "node": "Recovery rules",
+          "text": "No recovery rule fired.",
+          "status": "ok"
+        },
+        {
+          "node": "Retrieve policy",
+          "text": "Attempt 1 (case summary) → POL-RL-01 §RL-3 'RL-3 Rumors are not relocations' (score 3.731).",
+          "status": "info"
+        },
+        {
+          "node": "Policy check (R4)",
+          "text": "R4: retrieved policy governs 'venue_relocation', but this case is a weather_postponement on route 'full_refund'. Retrieval miss caught → re-querying within allowed scope.",
+          "status": "warn"
+        },
+        {
+          "node": "Retrieve policy",
+          "text": "Attempt 2 (scoped to weather_postponement) → POL-WX-01 §WX-2 'WX-2 Full refund if the fan cannot attend the new date' — citation recovered.",
+          "status": "ok"
+        },
+        {
+          "node": "Policy check (R4)",
+          "text": "R4 premise mismatch: the customer's request is framed around a different event (venue_relocation) than the one that happened → escalated to a human instead of auto-executing.",
+          "status": "warn"
+        },
+        {
+          "node": "Human review",
+          "text": "Waiting for a human to decide.",
+          "status": "warn"
+        }
+      ],
+      "retrieval": [
+        {
+          "attempt": 1,
+          "query": "The customer is concerned about the venue changing and wants a refund if it does.",
+          "hit": "POL-RL-01 §RL-3",
+          "scope": "venue_relocation",
+          "score": 3.731
+        },
+        {
+          "attempt": 2,
+          "query": "The customer is concerned about the venue changing and wants a refund if it does. refund cannot attend rescheduled new date original payment",
+          "hit": "POL-WX-01 §WX-2",
+          "scope": "weather_postponement",
+          "score": 8.787
+        }
+      ],
+      "policy": {
+        "policy_id": "POL-WX-01",
+        "section": "WX-2",
+        "heading": "WX-2 Full refund if the fan cannot attend the new date",
+        "title": "Weather Postponement Policy",
+        "file": "weather_postponement_policy.md",
+        "excerpt": "A buyer who cannot attend the rescheduled date may request a full refund of the ticket price plus CupSwap fees within 72 hours of the postponement notice. Refunds are paid to the original payment method only."
+      },
+      "route_final": "escalated",
+      "status": "escalated",
+      "needs": "human review",
+      "decided_by": null
+    },
+    "O-1011": {
+      "order_id": "O-1011",
+      "buyer": "Elena V.",
+      "country": "Spain",
+      "amount": 310,
+      "tickets": 2,
+      "message": "Fine, I'll keep my tickets and attend on the 26th. Just confirm my seats stay the same.",
+      "classification": {
+        "route": "keep_for_new_date",
+        "confidence": 1,
+        "attends_new_date": "yes",
+        "language": "en",
+        "summary_en": "The customer will attend the rescheduled match and wants confirmation of their seats.",
+        "rationale": "The customer explicitly stated they will keep their tickets and attend on the new date."
+      },
+      "route_initial": "keep_for_new_date",
+      "rules_fired": [],
+      "path": [
+        "trigger",
+        "classify",
+        "rules",
+        "retrieve",
+        "policy_check",
+        "branch",
+        "reissue"
+      ],
+      "timeline": [
+        {
+          "node": "Trigger",
+          "text": "Match postponed (Severe thunderstorm and lightning cells over Miami Gardens; …); order enters the refund-or-keep workflow.",
+          "status": "info"
+        },
+        {
+          "node": "Classify (LLM)",
+          "text": "route=keep_for_new_date · confidence=1 · attends new date=yes · language=en — The customer explicitly stated they will keep their tickets and attend on the new date.",
+          "status": "info"
+        },
+        {
+          "node": "Recovery rules",
+          "text": "No recovery rule fired.",
+          "status": "ok"
+        },
+        {
+          "node": "Retrieve policy",
+          "text": "Attempt 1 (case summary) → POL-WX-01 §WX-2 'WX-2 Full refund if the fan cannot attend the new date' (score 4.035).",
+          "status": "info"
+        },
+        {
+          "node": "Policy check (R4)",
+          "text": "Cited policy governs this case (weather_postponement).",
+          "status": "ok"
+        },
+        {
+          "node": "Reissue for new date",
+          "text": "Mobile tickets reissued for 2026-06-26T21:00 (same seat, reversible).",
+          "status": "ok"
+        }
+      ],
+      "retrieval": [
+        {
+          "attempt": 1,
+          "query": "The customer will attend the rescheduled match and wants confirmation of their seats.",
+          "hit": "POL-WX-01 §WX-2",
+          "scope": "weather_postponement",
+          "score": 4.035
+        }
+      ],
+      "policy": {
+        "policy_id": "POL-WX-01",
+        "section": "WX-2",
+        "heading": "WX-2 Full refund if the fan cannot attend the new date",
+        "title": "Weather Postponement Policy",
+        "file": "weather_postponement_policy.md",
+        "excerpt": "A buyer who cannot attend the rescheduled date may request a full refund of the ticket price plus CupSwap fees within 72 hours of the postponement notice. Refunds are paid to the original payment method only."
+      },
+      "route_final": "keep_for_new_date",
+      "status": "reissued_for_new_date",
+      "decided_by": null
+    },
+    "O-1012": {
+      "order_id": "O-1012",
+      "buyer": "Kevin O.",
+      "country": "Ireland",
+      "amount": 1240,
+      "tickets": 3,
+      "message": "Refund. We can't attend the new date.",
+      "classification": {
+        "route": "full_refund",
+        "confidence": 1,
+        "attends_new_date": "no",
+        "language": "en",
+        "summary_en": "The customer cannot attend the rescheduled match and is requesting a refund.",
+        "rationale": "The customer explicitly stated they cannot attend the new date."
+      },
+      "route_initial": "full_refund",
+      "rules_fired": [],
+      "path": [
+        "trigger",
+        "classify",
+        "rules",
+        "retrieve",
+        "policy_check",
+        "branch",
+        "gate"
+      ],
+      "timeline": [
+        {
+          "node": "Trigger",
+          "text": "Match postponed (Severe thunderstorm and lightning cells over Miami Gardens; …); order enters the refund-or-keep workflow.",
+          "status": "info"
+        },
+        {
+          "node": "Classify (LLM)",
+          "text": "route=full_refund · confidence=1 · attends new date=no · language=en — The customer explicitly stated they cannot attend the new date.",
+          "status": "info"
+        },
+        {
+          "node": "Recovery rules",
+          "text": "No recovery rule fired.",
+          "status": "ok"
+        },
+        {
+          "node": "Retrieve policy",
+          "text": "Attempt 1 (case summary) → POL-WX-01 §WX-2 'WX-2 Full refund if the fan cannot attend the new date' (score 6.51).",
+          "status": "info"
+        },
+        {
+          "node": "Policy check (R4)",
+          "text": "Cited policy governs this case (weather_postponement).",
+          "status": "ok"
+        },
+        {
+          "node": "Approval gate",
+          "text": "$1,240 > $500 threshold → PAUSED for explicit human approval.",
+          "status": "warn"
+        }
+      ],
+      "retrieval": [
+        {
+          "attempt": 1,
+          "query": "The customer cannot attend the rescheduled match and is requesting a refund.",
+          "hit": "POL-WX-01 §WX-2",
+          "scope": "weather_postponement",
+          "score": 6.51
+        }
+      ],
+      "policy": {
+        "policy_id": "POL-WX-01",
+        "section": "WX-2",
+        "heading": "WX-2 Full refund if the fan cannot attend the new date",
+        "title": "Weather Postponement Policy",
+        "file": "weather_postponement_policy.md",
+        "excerpt": "A buyer who cannot attend the rescheduled date may request a full refund of the ticket price plus CupSwap fees within 72 hours of the postponement notice. Refunds are paid to the original payment method only."
+      },
+      "route_final": "full_refund",
+      "status": "awaiting_approval",
+      "needs": "refund approval",
+      "decided_by": null
+    },
+    "O-1013": {
+      "order_id": "O-1013",
+      "buyer": "Nadia L.",
+      "country": "Canada",
+      "amount": 120,
+      "tickets": 1,
+      "message": "Keeping them! See you Friday.",
+      "classification": {
+        "route": "keep_for_new_date",
+        "confidence": 1,
+        "attends_new_date": "yes",
+        "language": "en",
+        "summary_en": "The customer confirmed they will attend the rescheduled match.",
+        "rationale": "The customer's message explicitly states they are keeping the tickets and will attend the new date."
+      },
+      "route_initial": "keep_for_new_date",
+      "rules_fired": [],
+      "path": [
+        "trigger",
+        "classify",
+        "rules",
+        "retrieve",
+        "policy_check",
+        "branch",
+        "reissue"
+      ],
+      "timeline": [
+        {
+          "node": "Trigger",
+          "text": "Match postponed (Severe thunderstorm and lightning cells over Miami Gardens; …); order enters the refund-or-keep workflow.",
+          "status": "info"
+        },
+        {
+          "node": "Classify (LLM)",
+          "text": "route=keep_for_new_date · confidence=1 · attends new date=yes · language=en — The customer's message explicitly states they are keeping the tickets and will attend the new date.",
+          "status": "info"
+        },
+        {
+          "node": "Recovery rules",
+          "text": "No recovery rule fired.",
+          "status": "ok"
+        },
+        {
+          "node": "Retrieve policy",
+          "text": "Attempt 1 (case summary) → POL-WX-01 §WX-2 'WX-2 Full refund if the fan cannot attend the new date' (score 4.035).",
+          "status": "info"
+        },
+        {
+          "node": "Policy check (R4)",
+          "text": "Cited policy governs this case (weather_postponement).",
+          "status": "ok"
+        },
+        {
+          "node": "Reissue for new date",
+          "text": "Mobile tickets reissued for 2026-06-26T21:00 (same seat, reversible).",
+          "status": "ok"
+        }
+      ],
+      "retrieval": [
+        {
+          "attempt": 1,
+          "query": "The customer confirmed they will attend the rescheduled match.",
+          "hit": "POL-WX-01 §WX-2",
+          "scope": "weather_postponement",
+          "score": 4.035
+        }
+      ],
+      "policy": {
+        "policy_id": "POL-WX-01",
+        "section": "WX-2",
+        "heading": "WX-2 Full refund if the fan cannot attend the new date",
+        "title": "Weather Postponement Policy",
+        "file": "weather_postponement_policy.md",
+        "excerpt": "A buyer who cannot attend the rescheduled date may request a full refund of the ticket price plus CupSwap fees within 72 hours of the postponement notice. Refunds are paid to the original payment method only."
+      },
+      "route_final": "keep_for_new_date",
+      "status": "reissued_for_new_date",
+      "decided_by": null
+    },
+    "O-1014": {
+      "order_id": "O-1014",
+      "buyer": "M. Smith",
+      "country": "unknown",
+      "amount": 495,
+      "tickets": 2,
+      "message": "Already filed a chargeback with my bank but please also refund me here asap.",
+      "classification": {
+        "route": "full_refund",
+        "confidence": 0.9,
+        "attends_new_date": "no",
+        "language": "unknown",
+        "summary_en": "The customer has filed a chargeback and is requesting a refund.",
+        "rationale": "The customer has indicated they do not wish to attend the rescheduled match and has already initiated a chargeback."
+      },
+      "route_initial": "full_refund",
+      "rules_fired": [
+        "R5 fraud signals (new account + bulk/chargeback) → re-route to suspected_fraud"
+      ],
+      "path": [
+        "trigger",
+        "classify",
+        "rules",
+        "retrieve",
+        "policy_check",
+        "branch",
+        "freeze"
+      ],
+      "timeline": [
+        {
+          "node": "Trigger",
+          "text": "Match postponed (Severe thunderstorm and lightning cells over Miami Gardens; …); order enters the refund-or-keep workflow.",
+          "status": "info"
+        },
+        {
+          "node": "Classify (LLM)",
+          "text": "route=full_refund · confidence=0.9 · attends new date=no · language=unknown — The customer has indicated they do not wish to attend the rescheduled match and has already initiated a chargeback.",
+          "status": "info"
+        },
+        {
+          "node": "Recovery rules",
+          "text": "R5: account 2 days old with 2 tickets and a chargeback; classifier said 'full_refund' → re-routed to suspected_fraud.",
+          "status": "warn"
+        },
+        {
+          "node": "Retrieve policy",
+          "text": "Attempt 1 (case summary) → POL-DF-01 §DF-4 'DF-4 Double-recovery attempts' (score 5.314).",
+          "status": "info"
+        },
+        {
+          "node": "Policy check (R4)",
+          "text": "Cited policy governs this case (all, dispute, suspected_fraud).",
+          "status": "ok"
+        },
+        {
+          "node": "Freeze + flag review",
+          "text": "Order frozen automatically (reversible). Account flag proposed — requires human approval.",
+          "status": "warn"
+        }
+      ],
+      "retrieval": [
+        {
+          "attempt": 1,
+          "query": "The customer has filed a chargeback and is requesting a refund.",
+          "hit": "POL-DF-01 §DF-4",
+          "scope": "all, dispute, suspected_fraud",
+          "score": 5.314
+        }
+      ],
+      "policy": {
+        "policy_id": "POL-DF-01",
+        "section": "DF-4",
+        "heading": "DF-4 Double-recovery attempts",
+        "title": "Disputes and Fraud Policy",
+        "file": "disputes_and_fraud_policy.md",
+        "excerpt": "A buyer who has filed a card chargeback cannot also receive a platform refund for the same order. The order is frozen pending review."
+      },
+      "route_final": "suspected_fraud",
+      "status": "frozen_flag_pending",
+      "needs": "account-flag approval",
+      "decided_by": null
+    }
+  }
+}

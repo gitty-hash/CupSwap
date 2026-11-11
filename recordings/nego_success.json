@@ -1,0 +1,227 @@
+{
+  "scenario": "nego_success",
+  "model": "gpt-4o-mini",
+  "mode": "record",
+  "recorded_at": "2026-11-10T16:42:26",
+  "inputs": {
+    "label": "Deal: Sofía's agent × listing L10 (Mexico vs Netherlands, Dallas, ask above cap)",
+    "listing_id": "L10",
+    "fan_id": "sofia",
+    "quantity": 2,
+    "ceiling": 190.0
+  },
+  "calls": {
+    "platform_open:1": {
+      "response": {
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_e5P2Nx2L5V6c2f0eyWJavJKz",
+            "name": "verify_ticket",
+            "arguments": "{\"listing_id\":\"L10\"}"
+          }
+        ],
+        "finish_reason": "tool_calls"
+      },
+      "usage": {
+        "prompt_tokens": 607,
+        "completion_tokens": 16,
+        "latency_s": 0.81
+      },
+      "last_user_or_tool_msg": "Shared negotiation state:\n{\"negotiation_id\": \"N-71BF50\", \"listing\": {\"listing_id\": \"L10\", \"match_id\": \"R16-DAL\", \"match\": \"Mexico vs Netherlands\", \"stage\": \"Round of 16\", \"city\": \"Dallas\", \"kickoff\": \"2026-07-04T20:00\", \"category\": \"Cat 3\", \"section\": \"C301\", \"row\": \"4\", \"quantity\": 2, \"seats_adjace"
+    },
+    "platform_open:2": {
+      "response": {
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_erxSrfThqbdZ9AVkjdmCOpQI",
+            "name": "get_price_cap",
+            "arguments": "{\"listing_id\":\"L10\"}"
+          }
+        ],
+        "finish_reason": "tool_calls"
+      },
+      "usage": {
+        "prompt_tokens": 674,
+        "completion_tokens": 17,
+        "latency_s": 1.11
+      },
+      "last_user_or_tool_msg": "{\"listing_id\": \"L10\", \"verified\": true, \"registry_status\": \"valid\", \"reason\": \"Barcodes registered to the seller and not previously transferred.\", \"seller_id\": \"S01\"}"
+    },
+    "platform_open:3": {
+      "response": {
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_8gUez7KaW8bXx2CFDAwJA8KG",
+            "name": "publish_ruling",
+            "arguments": "{\"trading_allowed\":true,\"enforced_opening_price\":210,\"badges\":[],\"note\":\"Ticket verified and asking price exceeds the resale cap.\"}"
+          }
+        ],
+        "finish_reason": "tool_calls"
+      },
+      "usage": {
+        "prompt_tokens": 750,
+        "completion_tokens": 42,
+        "latency_s": 1.17
+      },
+      "last_user_or_tool_msg": "{\"listing_id\": \"L10\", \"face_value\": 140, \"cap_multiplier\": 1.5, \"price_cap_per_ticket\": 210.0, \"asking_price\": 230, \"ask_exceeds_cap\": true}"
+    },
+    "buyer:r1": {
+      "response": {
+        "content": "{\"action\":\"offer\",\"price_per_ticket\":162,\"message\":\"I appreciate the listing, but I can only offer $162 per ticket for these seats. Let me know if that works for you.\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 864,
+        "completion_tokens": 41,
+        "latency_s": 0.88
+      },
+      "last_user_or_tool_msg": "SHARED NEGOTIATION STATE:\n{\"negotiation_id\": \"N-71BF50\", \"listing\": {\"listing_id\": \"L10\", \"match_id\": \"R16-DAL\", \"match\": \"Mexico vs Netherlands\", \"stage\": \"Round of 16\", \"city\": \"Dallas\", \"kickoff\": \"2026-07-04T20:00\", \"category\": \"Cat 3\", \"section\": \"C301\", \"row\": \"4\", \"quantity\": 2, \"seats_adjace"
+    },
+    "seller:r1": {
+      "response": {
+        "content": "{\"action\":\"counter\",\"price_per_ticket\":204,\"message\":\"Thanks for your offer! Given the high demand for Mexico's matches and the prime location of these seats, I can meet you at $204 per ticket. Let me know if that works!\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 974,
+        "completion_tokens": 52,
+        "latency_s": 1.23
+      },
+      "last_user_or_tool_msg": "SHARED NEGOTIATION STATE:\n{\"negotiation_id\": \"N-71BF50\", \"listing\": {\"listing_id\": \"L10\", \"match_id\": \"R16-DAL\", \"match\": \"Mexico vs Netherlands\", \"stage\": \"Round of 16\", \"city\": \"Dallas\", \"kickoff\": \"2026-07-04T20:00\", \"category\": \"Cat 3\", \"section\": \"C301\", \"row\": \"4\", \"quantity\": 2, \"seats_adjace"
+    },
+    "buyer:r2": {
+      "response": {
+        "content": "{\"action\":\"offer\",\"price_per_ticket\":169,\"message\":\"Thank you for your response. I can increase my offer to $169 per ticket. Please let me know if this works for you.\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 1095,
+        "completion_tokens": 41,
+        "latency_s": 1.03
+      },
+      "last_user_or_tool_msg": "SHARED NEGOTIATION STATE:\n{\"negotiation_id\": \"N-71BF50\", \"listing\": {\"listing_id\": \"L10\", \"match_id\": \"R16-DAL\", \"match\": \"Mexico vs Netherlands\", \"stage\": \"Round of 16\", \"city\": \"Dallas\", \"kickoff\": \"2026-07-04T20:00\", \"category\": \"Cat 3\", \"section\": \"C301\", \"row\": \"4\", \"quantity\": 2, \"seats_adjace"
+    },
+    "seller:r2": {
+      "response": {
+        "content": "{\"action\":\"counter\",\"price_per_ticket\":196,\"message\":\"I appreciate your increased offer! Given the popularity of Mexico's matches and the prime location of these seats, I can counter at $196 per ticket. Let me know your thoughts!\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 1207,
+        "completion_tokens": 50,
+        "latency_s": 1.59
+      },
+      "last_user_or_tool_msg": "SHARED NEGOTIATION STATE:\n{\"negotiation_id\": \"N-71BF50\", \"listing\": {\"listing_id\": \"L10\", \"match_id\": \"R16-DAL\", \"match\": \"Mexico vs Netherlands\", \"stage\": \"Round of 16\", \"city\": \"Dallas\", \"kickoff\": \"2026-07-04T20:00\", \"category\": \"Cat 3\", \"section\": \"C301\", \"row\": \"4\", \"quantity\": 2, \"seats_adjace"
+    },
+    "buyer:r3": {
+      "response": {
+        "content": "{\"action\":\"offer\",\"price_per_ticket\":176,\"message\":\"Thank you for your counter. I can offer $176 per ticket for these seats. Please let me know if this works for you.\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 1324,
+        "completion_tokens": 41,
+        "latency_s": 0.92
+      },
+      "last_user_or_tool_msg": "SHARED NEGOTIATION STATE:\n{\"negotiation_id\": \"N-71BF50\", \"listing\": {\"listing_id\": \"L10\", \"match_id\": \"R16-DAL\", \"match\": \"Mexico vs Netherlands\", \"stage\": \"Round of 16\", \"city\": \"Dallas\", \"kickoff\": \"2026-07-04T20:00\", \"category\": \"Cat 3\", \"section\": \"C301\", \"row\": \"4\", \"quantity\": 2, \"seats_adjace"
+    },
+    "seller:r3": {
+      "response": {
+        "content": "{\"action\":\"counter\",\"price_per_ticket\":186,\"message\":\"Thanks for your offer! Considering the high demand for Mexico's matches and the prime location of these seats, I can meet you at $186 per ticket. Let me know if that works for you!\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 1436,
+        "completion_tokens": 54,
+        "latency_s": 1.19
+      },
+      "last_user_or_tool_msg": "SHARED NEGOTIATION STATE:\n{\"negotiation_id\": \"N-71BF50\", \"listing\": {\"listing_id\": \"L10\", \"match_id\": \"R16-DAL\", \"match\": \"Mexico vs Netherlands\", \"stage\": \"Round of 16\", \"city\": \"Dallas\", \"kickoff\": \"2026-07-04T20:00\", \"category\": \"Cat 3\", \"section\": \"C301\", \"row\": \"4\", \"quantity\": 2, \"seats_adjace"
+    },
+    "buyer:r4": {
+      "response": {
+        "content": "{\"action\":\"offer\",\"price_per_ticket\":183,\"message\":\"I appreciate your counter. I can increase my offer to $183 per ticket for these seats. Please let me know if this works for you.\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 1557,
+        "completion_tokens": 43,
+        "latency_s": 0.95
+      },
+      "last_user_or_tool_msg": "SHARED NEGOTIATION STATE:\n{\"negotiation_id\": \"N-71BF50\", \"listing\": {\"listing_id\": \"L10\", \"match_id\": \"R16-DAL\", \"match\": \"Mexico vs Netherlands\", \"stage\": \"Round of 16\", \"city\": \"Dallas\", \"kickoff\": \"2026-07-04T20:00\", \"category\": \"Cat 3\", \"section\": \"C301\", \"row\": \"4\", \"quantity\": 2, \"seats_adjace"
+    },
+    "seller:r4": {
+      "response": {
+        "content": "{\"action\":\"counter\",\"price_per_ticket\":180,\"message\":\"Thank you for your offer! Given the excitement surrounding Mexico's matches and the prime seating location, I can meet you at $180 per ticket. Let me know if that works!\"}",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 1667,
+        "completion_tokens": 50,
+        "latency_s": 1.11
+      },
+      "last_user_or_tool_msg": "SHARED NEGOTIATION STATE:\n{\"negotiation_id\": \"N-71BF50\", \"listing\": {\"listing_id\": \"L10\", \"match_id\": \"R16-DAL\", \"match\": \"Mexico vs Netherlands\", \"stage\": \"Round of 16\", \"city\": \"Dallas\", \"kickoff\": \"2026-07-04T20:00\", \"category\": \"Cat 3\", \"section\": \"C301\", \"row\": \"4\", \"quantity\": 2, \"seats_adjace"
+    },
+    "platform_settle:1": {
+      "response": {
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_kuXcqImnl7ug9Lty06123oHB",
+            "name": "compute_fee",
+            "arguments": "{\"price_per_ticket\":183,\"quantity\":2}"
+          }
+        ],
+        "finish_reason": "tool_calls"
+      },
+      "usage": {
+        "prompt_tokens": 175,
+        "completion_tokens": 20,
+        "latency_s": 0.8
+      },
+      "last_user_or_tool_msg": "Deal: listing L10, $183.0/ticket × 2."
+    },
+    "platform_settle:2": {
+      "response": {
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_OC4WldzRH8e3fKNQyCCMMpxl",
+            "name": "record_settlement",
+            "arguments": "{\"price_per_ticket\":183,\"quantity\":2,\"buyer_total\":366,\"platform_fee\":29.28,\"seller_proceeds\":336.72}"
+          }
+        ],
+        "finish_reason": "tool_calls"
+      },
+      "usage": {
+        "prompt_tokens": 238,
+        "completion_tokens": 41,
+        "latency_s": 1.05
+      },
+      "last_user_or_tool_msg": "{\"buyer_total\": 366, \"platform_fee\": 29.28, \"seller_proceeds\": 336.72, \"fee_rate\": 0.08}"
+    },
+    "platform_settle:3": {
+      "response": {
+        "content": "Settlement completed: the buyer paid $366 for 2 tickets at $183 each, with a platform fee of $29.28 and seller proceeds of $336.72.",
+        "tool_calls": [],
+        "finish_reason": "stop"
+      },
+      "usage": {
+        "prompt_tokens": 294,
+        "completion_tokens": 36,
+        "latency_s": 0.85
+      },
+      "last_user_or_tool_msg": "{\"recorded\": true}"
+    }
+  }
+}
